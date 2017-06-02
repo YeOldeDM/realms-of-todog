@@ -2,3 +2,5 @@
 .import/
 .fscache
 *~
+# Source graphics
+crawl-tiles/
