@@ -12,4 +12,24 @@ script/script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
+transform/pos = Vector2( 16, 16 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = false
+drag_margin/v_enabled = false
+smoothing/enable = true
+smoothing/speed = 15.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
 
