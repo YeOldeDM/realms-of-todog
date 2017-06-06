@@ -6,6 +6,7 @@
 [node name="Player" type="Node2D"]
 
 script/script = ExtResource( 1 )
+name = ""
 blocks_movement = false
 
 [node name="Icon" type="Sprite" parent="."]

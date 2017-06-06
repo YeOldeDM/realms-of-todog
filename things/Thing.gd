@@ -15,6 +15,7 @@ const DIRECTIONS = {
 # Map node
 onready var map = get_parent()
 
+export(String, MULTILINE) var name = ""
 
 export(bool) var blocks_movement = false
 
@@ -28,11 +29,15 @@ func step( dir ):
 	# Calculate new cell
 	var new_cell = get_map_pos() + dir
 	
-	# Check for valid cell to step to
-	if not map.is_cell_blocked( new_cell ):
-		set_map_pos( new_cell )
+	# Check for colliders at new cell
+	var collider = map.get_collider( new_cell )
+	if collider == map:
+		print( self.name + " hits the wall with a thud!" )
+	elif collider != null:
+		print( "%s punches the %s in the face!" % [self.name, collider.name] )
 	else:
-		print( "Ow! You hit a wall!" )
+		set_map_pos( new_cell )
+	
 
 
 # Get our position in Map Coordinates
