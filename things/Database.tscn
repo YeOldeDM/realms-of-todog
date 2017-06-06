@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://things/Database.gd" type="Script" id=1]
 [ext_resource path="res://things/Thing.tscn" type="PackedScene" id=2]
 [ext_resource path="res://things/Player.gd" type="Script" id=3]
+[ext_resource path="res://graphics/player/base/human_m.png" type="Texture" id=4]
 
 [node name="Database" type="Node"]
 
@@ -20,4 +21,9 @@ transform/pos = Vector2( 0, 32 )
 
 script/script = ExtResource( 3 )
 
+[node name="Sprite" parent="player/player"]
 
+texture = ExtResource( 4 )
+
+
+[editable path="player/player"]
