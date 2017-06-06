@@ -12,4 +12,11 @@ func is_floor( cell ):
 
 func _ready():
 	var player = RPG.make_thing( "player/player" )
+	var alter1 = RPG.make_thing( "props/altar" )
+	var alter2 = RPG.make_thing( "props/altar" )
+	var potion = RPG.make_thing( "items/potion" )
+	
+	spawn( alter1, Vector2(8,7) )
+	spawn( alter2, Vector2(14,7) )
+	spawn( potion, Vector2(12,10) )
 	spawn( player, START_POS )
