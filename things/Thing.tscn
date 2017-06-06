@@ -6,6 +6,7 @@
 [node name="Thing" type="Node2D"]
 
 script/script = ExtResource( 1 )
+blocks_movement = false
 
 [node name="Sprite" type="Sprite" parent="."]
 

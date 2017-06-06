@@ -16,6 +16,8 @@ const DIRECTIONS = {
 onready var map = get_parent()
 
 
+export(bool) var blocks_movement = false
+
 
 # Step one cell in a direction
 func step( dir ):
@@ -27,7 +29,7 @@ func step( dir ):
 	var new_cell = get_map_pos() + dir
 	
 	# Check for valid cell to step to
-	if map.is_floor( new_cell ):
+	if not map.is_cell_blocked( new_cell ):
 		set_map_pos( new_cell )
 	else:
 		print( "Ow! You hit a wall!" )
