@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://things/components/Item.gd" type="Script" id=1]
+
+[node name="Item" type="Node2D"]
+
+script = ExtResource( 1 )
+stackable = false
+throwable = true
+use_type = 0
+charges = 0
+use_effect = ""
+brand_sprite = null
+
+[node name="Brand" type="Sprite" parent="." index="0"]
+
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Count" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -32.0
+margin_bottom = -32.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+valign = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+

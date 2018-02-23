@@ -1,6 +1,4 @@
-### Godot stuff ###
-.import/
-.fscache
+.DS_Store
 *~
-# Source graphics
-crawl-tiles/
+.import/
+logs/

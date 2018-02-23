@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://things/components/Equipment.gd" type="Script" id=1]
+[ext_resource path="res://graphics/misc/eq_slots.png" type="Texture" id=2]
+
+[node name="Equipment" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+equip_slot = ""
+paperdoll_sprite = null
+cursed = false
+min_damage = 0
+max_damage = 0
+armor_class = 0
+
+[node name="Equipped" type="Sprite" parent="." index="0"]
+
+z_index = -1
+texture = ExtResource( 2 )
+centered = false
+hframes = 4
+_sections_unfolded = [ "Animation", "Offset", "Z Index" ]
+
+
