@@ -103,6 +103,7 @@ func _ready():
 
 func _enter_tree():
 	_set_stack( self.stack )
+	_set_brand_sprite( self.brand_sprite )
 	if Owner:
 		Owner.z_index = RPG.THING_LAYER_ITEMS
 

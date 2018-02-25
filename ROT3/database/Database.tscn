@@ -354,8 +354,6 @@ armor_class = 2
 
 [node name="Hero" type="Node" parent="." index="3"]
 
-editor/display_folded = true
-
 [node name="Godot" parent="Hero" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 272, 112 )

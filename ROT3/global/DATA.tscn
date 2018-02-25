@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://global/DATA.gd" type="Script" id=1]
 [ext_resource path="res://global/SpeciesData.gd" type="Script" id=2]
@@ -6,8 +6,36 @@
 [ext_resource path="res://graphics/player/base/human_f.png" type="Texture" id=4]
 [ext_resource path="res://graphics/player/base/godot_m.png" type="Texture" id=5]
 [ext_resource path="res://graphics/player/base/godot_f.png" type="Texture" id=6]
+[ext_resource path="res://graphics/player/base/elf_m.png" type="Texture" id=7]
+[ext_resource path="res://graphics/player/base/elf_f.png" type="Texture" id=8]
+[ext_resource path="res://graphics/player/base/deep_elf_m.png" type="Texture" id=9]
+[ext_resource path="res://graphics/player/base/deep_elf_f.png" type="Texture" id=10]
+[ext_resource path="res://graphics/player/base/dwarf_m.png" type="Texture" id=11]
+[ext_resource path="res://graphics/player/base/dwarf_f.png" type="Texture" id=12]
+[ext_resource path="res://graphics/player/base/deep_dwarf_m.png" type="Texture" id=13]
+[ext_resource path="res://graphics/player/base/deep_dwarf_f.png" type="Texture" id=14]
+[ext_resource path="res://graphics/player/base/halfling_m.png" type="Texture" id=15]
+[ext_resource path="res://graphics/player/base/halfling_f.png" type="Texture" id=16]
+[ext_resource path="res://graphics/player/base/gnome_m.png" type="Texture" id=17]
+[ext_resource path="res://graphics/player/base/gnome_f.png" type="Texture" id=18]
+[ext_resource path="res://graphics/player/base/kobold_m.png" type="Texture" id=19]
+[ext_resource path="res://graphics/player/base/kobold_f.png" type="Texture" id=20]
+[ext_resource path="res://graphics/player/base/merfolk_m.png" type="Texture" id=21]
+[ext_resource path="res://graphics/player/base/merfolk_f.png" type="Texture" id=22]
+[ext_resource path="res://graphics/player/base/minotaur_m.png" type="Texture" id=23]
+[ext_resource path="res://graphics/player/base/minotaur_f.png" type="Texture" id=24]
+[ext_resource path="res://graphics/player/base/mummy_m.png" type="Texture" id=25]
+[ext_resource path="res://graphics/player/base/mummy_f.png" type="Texture" id=26]
+[ext_resource path="res://graphics/player/base/ogre_m.png" type="Texture" id=27]
+[ext_resource path="res://graphics/player/base/ogre_f.png" type="Texture" id=28]
+[ext_resource path="res://graphics/player/base/orc_m.png" type="Texture" id=29]
+[ext_resource path="res://graphics/player/base/orc_f.png" type="Texture" id=30]
+[ext_resource path="res://graphics/player/base/spriggan_m.png" type="Texture" id=31]
+[ext_resource path="res://graphics/player/base/spriggan_f.png" type="Texture" id=32]
+[ext_resource path="res://graphics/player/base/troll_m.png" type="Texture" id=33]
+[ext_resource path="res://graphics/player/base/troll_f.png" type="Texture" id=34]
 
-[node name="DATA" type="Node" index="0"]
+[node name="DATA" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -20,7 +48,8 @@ Description = "Just some guy."
 hp_per_level = 0
 mp_per_level = 0
 hp_regen = 0.05
-mp_regen = 0.01
+mp_regen = 0.02
+move_speed = 1.0
 strength_mod = 0
 dexterity_mod = 0
 intelligence_mod = 0
@@ -35,10 +64,221 @@ hp_per_level = 2
 mp_per_level = 1
 hp_regen = 0.08
 mp_regen = 0.04
+move_speed = 1.0
 strength_mod = -1
 dexterity_mod = -1
 intelligence_mod = 1
 male_sprite = ExtResource( 5 )
 female_sprite = ExtResource( 6 )
+
+[node name="High Elf" type="Node" parent="Species" index="2"]
+
+script = ExtResource( 2 )
+Description = "Elves are elves."
+hp_per_level = 0
+mp_per_level = 3
+hp_regen = 0.03
+mp_regen = 0.08
+move_speed = 1.12
+strength_mod = -2
+dexterity_mod = 2
+intelligence_mod = 2
+male_sprite = ExtResource( 7 )
+female_sprite = ExtResource( 8 )
+
+[node name="Deep Elf" type="Node" parent="Species" index="3"]
+
+script = ExtResource( 2 )
+Description = "Tha Deep Elves"
+hp_per_level = 1
+mp_per_level = 2
+hp_regen = 0.05
+mp_regen = 0.06
+move_speed = 1.1
+strength_mod = -1
+dexterity_mod = -1
+intelligence_mod = -1
+male_sprite = ExtResource( 9 )
+female_sprite = ExtResource( 10 )
+
+[node name="Hill Dwarf" type="Node" parent="Species" index="4"]
+
+script = ExtResource( 2 )
+Description = "Hills have Dwarves"
+hp_per_level = 3
+mp_per_level = -2
+hp_regen = 0.08
+mp_regen = 0.01
+move_speed = 0.8
+strength_mod = 4
+dexterity_mod = -2
+intelligence_mod = -1
+male_sprite = ExtResource( 11 )
+female_sprite = ExtResource( 12 )
+
+[node name="Deep Dwarf" type="Node" parent="Species" index="5"]
+
+script = ExtResource( 2 )
+Description = "Deep Dwarves"
+hp_per_level = 2
+mp_per_level = -1
+hp_regen = 0.08
+mp_regen = 0.01
+move_speed = 0.8
+strength_mod = 3
+dexterity_mod = -2
+intelligence_mod = 0
+male_sprite = ExtResource( 13 )
+female_sprite = ExtResource( 14 )
+
+[node name="Halfling" type="Node" parent="Species" index="6"]
+
+script = ExtResource( 2 )
+Description = "Half a Ling"
+hp_per_level = 0
+mp_per_level = 0
+hp_regen = 0.06
+mp_regen = 0.03
+move_speed = 0.9
+strength_mod = -1
+dexterity_mod = 2
+intelligence_mod = 1
+male_sprite = ExtResource( 15 )
+female_sprite = ExtResource( 16 )
+
+[node name="Gnome" type="Node" parent="Species" index="7"]
+
+script = ExtResource( 2 )
+Description = "Gnomes."
+hp_per_level = 0
+mp_per_level = 2
+hp_regen = 0.03
+mp_regen = 0.06
+move_speed = 0.85
+strength_mod = -2
+dexterity_mod = 1
+intelligence_mod = 1
+male_sprite = ExtResource( 17 )
+female_sprite = ExtResource( 18 )
+
+[node name="Kobold" type="Node" parent="Species" index="8"]
+
+script = ExtResource( 2 )
+Description = "Kobolds."
+hp_per_level = -1
+mp_per_level = -1
+hp_regen = 0.04
+mp_regen = 0.04
+move_speed = 1.1
+strength_mod = 0
+dexterity_mod = 3
+intelligence_mod = -1
+male_sprite = ExtResource( 19 )
+female_sprite = ExtResource( 20 )
+
+[node name="Merfolk" type="Node" parent="Species" index="9"]
+
+script = ExtResource( 2 )
+Description = "Fish People!"
+hp_per_level = 2
+mp_per_level = 0
+hp_regen = 0.1
+mp_regen = 0.0
+move_speed = 0.8
+strength_mod = 2
+dexterity_mod = 2
+intelligence_mod = 0
+male_sprite = ExtResource( 21 )
+female_sprite = ExtResource( 22 )
+
+[node name="Minotaur" type="Node" parent="Species" index="10"]
+
+script = ExtResource( 2 )
+Description = "Cow People!"
+hp_per_level = 4
+mp_per_level = -4
+hp_regen = 0.07
+mp_regen = 0.03
+move_speed = 0.9
+strength_mod = 4
+dexterity_mod = -2
+intelligence_mod = -2
+male_sprite = ExtResource( 23 )
+female_sprite = ExtResource( 24 )
+
+[node name="Mummy" type="Node" parent="Species" index="11"]
+
+script = ExtResource( 2 )
+Description = "Mummies."
+hp_per_level = -2
+mp_per_level = -2
+hp_regen = 0.0
+mp_regen = 0.0
+move_speed = 0.8
+strength_mod = 0
+dexterity_mod = 0
+intelligence_mod = 0
+male_sprite = ExtResource( 25 )
+female_sprite = ExtResource( 26 )
+
+[node name="Ogre" type="Node" parent="Species" index="12"]
+
+script = ExtResource( 2 )
+Description = "Ogres."
+hp_per_level = 3
+mp_per_level = -4
+hp_regen = 0.02
+mp_regen = 0.0
+move_speed = 1.0
+strength_mod = 3
+dexterity_mod = -2
+intelligence_mod = -2
+male_sprite = ExtResource( 27 )
+female_sprite = ExtResource( 28 )
+
+[node name="Orc" type="Node" parent="Species" index="13"]
+
+script = ExtResource( 2 )
+Description = "Orcs."
+hp_per_level = 1
+mp_per_level = -1
+hp_regen = 0.04
+mp_regen = 0.01
+move_speed = 1.0
+strength_mod = 0
+dexterity_mod = 0
+intelligence_mod = -1
+male_sprite = ExtResource( 29 )
+female_sprite = ExtResource( 30 )
+
+[node name="Spriggan" type="Node" parent="Species" index="14"]
+
+script = ExtResource( 2 )
+Description = "Tree People!"
+hp_per_level = 3
+mp_per_level = 1
+hp_regen = 0.0
+mp_regen = 0.04
+move_speed = 0.5
+strength_mod = 3
+dexterity_mod = 3
+intelligence_mod = 3
+male_sprite = ExtResource( 31 )
+female_sprite = ExtResource( 32 )
+
+[node name="Troll" type="Node" parent="Species" index="15"]
+
+script = ExtResource( 2 )
+Description = "Trolls."
+hp_per_level = 4
+mp_per_level = -5
+hp_regen = 0.3
+mp_regen = 0.0
+move_speed = 0.9
+strength_mod = 3
+dexterity_mod = -3
+intelligence_mod = -3
+male_sprite = ExtResource( 33 )
+female_sprite = ExtResource( 34 )
 
 
