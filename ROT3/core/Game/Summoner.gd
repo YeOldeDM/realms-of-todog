@@ -13,14 +13,15 @@ func _ready():
 
 func populate_tree( parent, data ):
 	for thing in data:
-		var itm = tree.create_item( parent )
-		itm.set_text(0, thing.name)
-		if "Name" in thing:
-			itm.set_custom_color(0, Color(0.8, 0.3, 0.3) )
-			itm.set_metadata( 0, RPG.database.get_path_to(thing) )
-		else:
-			itm.collapsed = true
-			populate_tree( itm, thing.get_children() )
+		if thing.name != "Hero":
+			var itm = tree.create_item( parent )
+			itm.set_text(0, thing.name)
+			if "Name" in thing:
+				itm.set_custom_color(0, Color(0.8, 0.3, 0.3) )
+				itm.set_metadata( 0, RPG.database.get_path_to(thing) )
+			else:
+				itm.collapsed = true
+				populate_tree( itm, thing.get_children() )
 
 func _on_Spawn_pressed():
 	var sel = tree.get_selected()

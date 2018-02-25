@@ -116,6 +116,10 @@ func get_attack_bonus():
 	var weapon = get_weapon()
 	if weapon:
 		attack += weapon.components.equipment.accuracy
+	if Gear:
+		if "accuracy" in Gear:
+			attack += Gear.accuracy
+
 	var L = 3 
 	if Owner and Owner == RPG.player:
 		L = 5
@@ -131,17 +135,23 @@ func get_weapon():
 func get_weapon_damage():
 	var damage_roll = roll_base_damage()
 	if Gear:
-		if Gear.slots.weapon:
-			damage_roll = Gear.slots.weapon.components.equipment.roll_damage()
+		if "min_damage" in Gear:
+			damage_roll = Gear.roll_damage()
+		elif 'slots' in Gear:
+			if Gear.slots.weapon:
+				damage_roll = Gear.slots.weapon.components.equipment.roll_damage()
 	damage_roll += self.get_strength() / 2
 	return damage_roll
 
 func get_armor_class():
 	var ac = 10 + self.get_dexterity() / 4
 	if Gear:
-		for slot in Gear.slots:
-			if Gear.slots[slot]:
-				ac += Gear.slots[slot].components.equipment.armor_class
+		if "armor_class" in Gear:
+			ac += Gear.armor_class
+		elif 'slots' in Gear:
+			for slot in Gear.slots:
+				if Gear.slots[slot]:
+					ac += Gear.slots[slot].components.equipment.armor_class
 	return ac
 
 
