@@ -36,6 +36,21 @@ func message( text="", color="#ffffff" ):
 	var txt = "\n[color=%s]%s[/color]" % [color, text]
 	append_bbcode( txt )
 
+func random_message():
+	var choices = [
+		"Never gonna give you up!",
+		"Never gonna let you down!",
+		"What is love!",
+		"Baby don't hurt me.",
+		"There's a snake in my boot!",
+		"There's a boot in my peanut butter!",
+		]
+
+	var n = randi() % choices.size()
+	message( choices[ n ], COLOR_FORTUNATE_EVENT )
+
+
+
 
 
 func _ready():

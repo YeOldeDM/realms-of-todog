@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://database/Database.gd" type="Script" id=1]
 [ext_resource path="res://things/Thing.tscn" type="PackedScene" id=2]
@@ -15,47 +15,48 @@
 [ext_resource path="res://graphics/brands/i-confusion.png" type="Texture" id=13]
 [ext_resource path="res://graphics/item/scroll/scroll.png" type="Texture" id=14]
 [ext_resource path="res://graphics/brands/i-immolation.png" type="Texture" id=15]
-[ext_resource path="res://graphics/item/weapon/club.png" type="Texture" id=16]
-[ext_resource path="res://things/components/Equipment.tscn" type="PackedScene" id=17]
-[ext_resource path="res://graphics/doll/weapon/club.png" type="Texture" id=18]
-[ext_resource path="res://graphics/item/weapon/dagger.png" type="Texture" id=19]
-[ext_resource path="res://graphics/doll/weapon/dagger.png" type="Texture" id=20]
-[ext_resource path="res://graphics/item/weapon/elven_dagger.png" type="Texture" id=21]
-[ext_resource path="res://graphics/item/weapon/orcish_dagger.png" type="Texture" id=22]
-[ext_resource path="res://graphics/item/weapon/short_sword1.png" type="Texture" id=23]
-[ext_resource path="res://graphics/doll/weapon/short_sword.png" type="Texture" id=24]
-[ext_resource path="res://graphics/item/weapon/elven_short_sword.png" type="Texture" id=25]
-[ext_resource path="res://graphics/item/weapon/orcish_short_sword.png" type="Texture" id=26]
-[ext_resource path="res://graphics/item/weapon/mace1.png" type="Texture" id=27]
-[ext_resource path="res://graphics/doll/weapon/mace.png" type="Texture" id=28]
-[ext_resource path="res://graphics/item/weapon/hand_axe1.png" type="Texture" id=29]
-[ext_resource path="res://graphics/doll/weapon/hand_axe.png" type="Texture" id=30]
-[ext_resource path="res://graphics/item/armor/robe1.png" type="Texture" id=31]
-[ext_resource path="res://graphics/doll/body/robe_white.png" type="Texture" id=32]
-[ext_resource path="res://graphics/item/armor/leather_armour1.png" type="Texture" id=33]
-[ext_resource path="res://graphics/doll/body/leather_armour.png" type="Texture" id=34]
-[ext_resource path="res://graphics/item/armor/leather_armour2.png" type="Texture" id=35]
-[ext_resource path="res://graphics/doll/body/leather_armour2.png" type="Texture" id=36]
-[ext_resource path="res://graphics/item/armor/elven_leather_armor.png" type="Texture" id=37]
-[ext_resource path="res://graphics/doll/body/leather_armour3.png" type="Texture" id=38]
-[ext_resource path="res://graphics/item/armor/orcish_leather_armor.png" type="Texture" id=39]
-[ext_resource path="res://graphics/doll/body/leather2.png" type="Texture" id=40]
-[ext_resource path="res://graphics/item/shields/shield3_round.png" type="Texture" id=41]
-[ext_resource path="res://graphics/doll/shield/shield_round4.png" type="Texture" id=42]
-[ext_resource path="res://graphics/item/shield/buckler1.png" type="Texture" id=43]
-[ext_resource path="res://graphics/doll/shield/boromir.png" type="Texture" id=44]
-[ext_resource path="res://graphics/item/shield/buckler2.png" type="Texture" id=45]
-[ext_resource path="res://graphics/doll/shield/bullseye.png" type="Texture" id=46]
-[ext_resource path="res://graphics/item/shield/buckler3.png" type="Texture" id=47]
-[ext_resource path="res://graphics/doll/shield/shield_round3.png" type="Texture" id=48]
-[ext_resource path="res://graphics/player/base/godot_m.png" type="Texture" id=49]
-[ext_resource path="res://things/components/Paperdoll.tscn" type="PackedScene" id=50]
-[ext_resource path="res://things/components/Player.tscn" type="PackedScene" id=51]
-[ext_resource path="res://things/components/FighterGear.tscn" type="PackedScene" id=52]
-[ext_resource path="res://graphics/fx/bolt04.png" type="Texture" id=53]
-[ext_resource path="res://things/components/FX.tscn" type="PackedScene" id=54]
+[ext_resource path="res://graphics/brands/i-random_uselessness.png" type="Texture" id=16]
+[ext_resource path="res://graphics/item/weapon/club.png" type="Texture" id=17]
+[ext_resource path="res://things/components/Equipment.tscn" type="PackedScene" id=18]
+[ext_resource path="res://graphics/doll/weapon/club.png" type="Texture" id=19]
+[ext_resource path="res://graphics/item/weapon/dagger.png" type="Texture" id=20]
+[ext_resource path="res://graphics/doll/weapon/dagger.png" type="Texture" id=21]
+[ext_resource path="res://graphics/item/weapon/elven_dagger.png" type="Texture" id=22]
+[ext_resource path="res://graphics/item/weapon/orcish_dagger.png" type="Texture" id=23]
+[ext_resource path="res://graphics/item/weapon/short_sword1.png" type="Texture" id=24]
+[ext_resource path="res://graphics/doll/weapon/short_sword.png" type="Texture" id=25]
+[ext_resource path="res://graphics/item/weapon/elven_short_sword.png" type="Texture" id=26]
+[ext_resource path="res://graphics/item/weapon/orcish_short_sword.png" type="Texture" id=27]
+[ext_resource path="res://graphics/item/weapon/mace1.png" type="Texture" id=28]
+[ext_resource path="res://graphics/doll/weapon/mace.png" type="Texture" id=29]
+[ext_resource path="res://graphics/item/weapon/hand_axe1.png" type="Texture" id=30]
+[ext_resource path="res://graphics/doll/weapon/hand_axe.png" type="Texture" id=31]
+[ext_resource path="res://graphics/item/armor/robe1.png" type="Texture" id=32]
+[ext_resource path="res://graphics/doll/body/robe_white.png" type="Texture" id=33]
+[ext_resource path="res://graphics/item/armor/leather_armour1.png" type="Texture" id=34]
+[ext_resource path="res://graphics/doll/body/leather_armour.png" type="Texture" id=35]
+[ext_resource path="res://graphics/item/armor/leather_armour2.png" type="Texture" id=36]
+[ext_resource path="res://graphics/doll/body/leather_armour2.png" type="Texture" id=37]
+[ext_resource path="res://graphics/item/armor/elven_leather_armor.png" type="Texture" id=38]
+[ext_resource path="res://graphics/doll/body/leather_armour3.png" type="Texture" id=39]
+[ext_resource path="res://graphics/item/armor/orcish_leather_armor.png" type="Texture" id=40]
+[ext_resource path="res://graphics/doll/body/leather2.png" type="Texture" id=41]
+[ext_resource path="res://graphics/item/shield/shield3_round.png" type="Texture" id=42]
+[ext_resource path="res://graphics/doll/shield/shield_round4.png" type="Texture" id=43]
+[ext_resource path="res://graphics/item/shield/buckler1.png" type="Texture" id=44]
+[ext_resource path="res://graphics/doll/shield/boromir.png" type="Texture" id=45]
+[ext_resource path="res://graphics/item/shield/buckler2.png" type="Texture" id=46]
+[ext_resource path="res://graphics/doll/shield/bullseye.png" type="Texture" id=47]
+[ext_resource path="res://graphics/item/shield/buckler3.png" type="Texture" id=48]
+[ext_resource path="res://graphics/doll/shield/shield_round3.png" type="Texture" id=49]
+[ext_resource path="res://graphics/player/base/godot_m.png" type="Texture" id=50]
+[ext_resource path="res://things/components/Paperdoll.tscn" type="PackedScene" id=51]
+[ext_resource path="res://things/components/Player.tscn" type="PackedScene" id=52]
+[ext_resource path="res://things/components/FighterGear.tscn" type="PackedScene" id=53]
+[ext_resource path="res://graphics/fx/bolt04.png" type="Texture" id=54]
+[ext_resource path="res://things/components/FX.tscn" type="PackedScene" id=55]
 
-[node name="Database" type="Node" index="0"]
+[node name="Database" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -159,6 +160,8 @@ default_mode = null
 
 [node name="Potion" type="Node" parent="Item" index="0"]
 
+editor/display_folded = true
+
 [node name="HealingPotion" parent="Item/Potion" index="0" instance=ExtResource( 2 )]
 
 editor/display_folded = true
@@ -175,6 +178,8 @@ use_effect = "LightHealSelf"
 brand_sprite = ExtResource( 11 )
 
 [node name="Wand" type="Node" parent="Item" index="1"]
+
+editor/display_folded = true
 
 [node name="ConfusionWand" parent="Item/Wand" index="0" instance=ExtResource( 2 )]
 
@@ -193,11 +198,13 @@ brand_sprite = ExtResource( 13 )
 
 [node name="Scroll" type="Node" parent="Item" index="2"]
 
+editor/display_folded = true
+
 [node name="FireballScroll" parent="Item/Scroll" index="0" instance=ExtResource( 2 )]
 
 editor/display_folded = true
 position = Vector2( 240, 272 )
-Name = "Scroll of Immolation"
+Name = "Scroll of Fireball"
 sprite_path = ExtResource( 14 )
 stay_visible = true
 
@@ -210,24 +217,43 @@ charges = 1
 use_effect = "Fireball"
 brand_sprite = ExtResource( 15 )
 
+[node name="UselessnessScroll" parent="Item/Scroll" index="1" instance=ExtResource( 2 )]
+
+editor/display_folded = true
+position = Vector2( 240, 272 )
+Name = "Scroll of Random Uselessness"
+sprite_path = ExtResource( 14 )
+stay_visible = true
+
+[node name="Item" parent="Item/Scroll/UselessnessScroll" index="1" instance=ExtResource( 10 )]
+
+stackable = true
+throwable = false
+use_type = 1
+charges = 1
+use_effect = "RandomUselessness"
+brand_sprite = ExtResource( 16 )
+
 [node name="Equipment" type="Node" parent="." index="2"]
 
 [node name="Weapon" type="Node" parent="Equipment" index="0"]
+
+editor/display_folded = true
 
 [node name="Club" parent="Equipment/Weapon" index="0" instance=ExtResource( 2 )]
 
 editor/display_folded = true
 position = Vector2( 48, 208 )
 Name = "Club"
-sprite_path = ExtResource( 16 )
+sprite_path = ExtResource( 17 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/Club" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/Club" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/Club" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 18 )
+paperdoll_sprite = ExtResource( 19 )
 min_damage = 1
 max_damage = 3
 accuracy = 1
@@ -237,15 +263,15 @@ accuracy = 1
 editor/display_folded = true
 position = Vector2( 80, 208 )
 Name = "Dagger"
-sprite_path = ExtResource( 19 )
+sprite_path = ExtResource( 20 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/Dagger" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/Dagger" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/Dagger" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 20 )
+paperdoll_sprite = ExtResource( 21 )
 min_damage = 2
 max_damage = 4
 accuracy = 2
@@ -255,15 +281,15 @@ accuracy = 2
 editor/display_folded = true
 position = Vector2( 80, 192 )
 Name = "Elven Dagger"
-sprite_path = ExtResource( 21 )
+sprite_path = ExtResource( 22 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/ElvenDagger" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/ElvenDagger" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/ElvenDagger" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 20 )
+paperdoll_sprite = ExtResource( 21 )
 min_damage = 1
 max_damage = 4
 accuracy = 4
@@ -273,15 +299,15 @@ accuracy = 4
 editor/display_folded = true
 position = Vector2( 80, 176 )
 Name = "Orcish Dagger"
-sprite_path = ExtResource( 22 )
+sprite_path = ExtResource( 23 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/OrcishDagger" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/OrcishDagger" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/OrcishDagger" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 20 )
+paperdoll_sprite = ExtResource( 21 )
 min_damage = 3
 max_damage = 4
 accuracy = 1
@@ -291,15 +317,15 @@ accuracy = 1
 editor/display_folded = true
 position = Vector2( 112, 208 )
 Name = "Shortsword"
-sprite_path = ExtResource( 23 )
+sprite_path = ExtResource( 24 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/Shortsword" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/Shortsword" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/Shortsword" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 24 )
+paperdoll_sprite = ExtResource( 25 )
 min_damage = 3
 max_damage = 8
 accuracy = 0
@@ -309,15 +335,15 @@ accuracy = 0
 editor/display_folded = true
 position = Vector2( 112, 192 )
 Name = "Elven Shortsword"
-sprite_path = ExtResource( 25 )
+sprite_path = ExtResource( 26 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/ElvenShortsword" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/ElvenShortsword" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/ElvenShortsword" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 24 )
+paperdoll_sprite = ExtResource( 25 )
 min_damage = 2
 max_damage = 8
 accuracy = 1
@@ -327,15 +353,15 @@ accuracy = 1
 editor/display_folded = true
 position = Vector2( 112, 176 )
 Name = "Orcish Shortsword"
-sprite_path = ExtResource( 26 )
+sprite_path = ExtResource( 27 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/OrcishShortsword" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/OrcishShortsword" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/OrcishShortsword" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 24 )
+paperdoll_sprite = ExtResource( 25 )
 min_damage = 3
 max_damage = 9
 accuracy = -1
@@ -345,15 +371,15 @@ accuracy = -1
 editor/display_folded = true
 position = Vector2( 144, 208 )
 Name = "Mace"
-sprite_path = ExtResource( 27 )
+sprite_path = ExtResource( 28 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/Mace" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/Mace" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/Mace" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 28 )
+paperdoll_sprite = ExtResource( 29 )
 min_damage = 4
 max_damage = 6
 accuracy = 0
@@ -363,15 +389,15 @@ accuracy = 0
 editor/display_folded = true
 position = Vector2( 176, 208 )
 Name = "Mace"
-sprite_path = ExtResource( 29 )
+sprite_path = ExtResource( 30 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Weapon/Hand Axe" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Weapon/Hand Axe" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Weapon/Hand Axe" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "weapon"
-paperdoll_sprite = ExtResource( 30 )
+paperdoll_sprite = ExtResource( 31 )
 min_damage = 2
 max_damage = 6
 accuracy = -1
@@ -385,15 +411,15 @@ editor/display_folded = true
 editor/display_folded = true
 position = Vector2( 48, 288 )
 Name = "Robes"
-sprite_path = ExtResource( 31 )
+sprite_path = ExtResource( 32 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Body/Robes" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Body/Robes" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Body/Robes" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "body"
-paperdoll_sprite = ExtResource( 32 )
+paperdoll_sprite = ExtResource( 33 )
 accuracy = 0
 armor_class = 1
 
@@ -402,17 +428,17 @@ armor_class = 1
 editor/display_folded = true
 position = Vector2( 48, 320 )
 Name = "Leather Jerkin"
-sprite_path = ExtResource( 33 )
+sprite_path = ExtResource( 34 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Body/LeatherJerkin" index="1" instance=ExtResource( 10 )]
 
 throwable = false
 
-[node name="Equipment" parent="Equipment/Body/LeatherJerkin" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Body/LeatherJerkin" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "body"
-paperdoll_sprite = ExtResource( 34 )
+paperdoll_sprite = ExtResource( 35 )
 accuracy = 0
 armor_class = 4
 
@@ -421,17 +447,17 @@ armor_class = 4
 editor/display_folded = true
 position = Vector2( 64, 320 )
 Name = "Leather Armor"
-sprite_path = ExtResource( 35 )
+sprite_path = ExtResource( 36 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Body/LeatherArmor" index="1" instance=ExtResource( 10 )]
 
 throwable = false
 
-[node name="Equipment" parent="Equipment/Body/LeatherArmor" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Body/LeatherArmor" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "body"
-paperdoll_sprite = ExtResource( 36 )
+paperdoll_sprite = ExtResource( 37 )
 accuracy = 0
 armor_class = 6
 
@@ -440,17 +466,17 @@ armor_class = 6
 editor/display_folded = true
 position = Vector2( 80, 320 )
 Name = "Elven Leather Armor"
-sprite_path = ExtResource( 37 )
+sprite_path = ExtResource( 38 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Body/ElvenLeather" index="1" instance=ExtResource( 10 )]
 
 throwable = false
 
-[node name="Equipment" parent="Equipment/Body/ElvenLeather" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Body/ElvenLeather" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "body"
-paperdoll_sprite = ExtResource( 38 )
+paperdoll_sprite = ExtResource( 39 )
 accuracy = 0
 armor_class = 5
 
@@ -459,17 +485,17 @@ armor_class = 5
 editor/display_folded = true
 position = Vector2( 96, 320 )
 Name = "Orcish Leather Armor"
-sprite_path = ExtResource( 39 )
+sprite_path = ExtResource( 40 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Body/OrcishLeather" index="1" instance=ExtResource( 10 )]
 
 throwable = false
 
-[node name="Equipment" parent="Equipment/Body/OrcishLeather" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Body/OrcishLeather" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "body"
-paperdoll_sprite = ExtResource( 40 )
+paperdoll_sprite = ExtResource( 41 )
 accuracy = 0
 armor_class = 6
 
@@ -479,15 +505,15 @@ armor_class = 6
 
 position = Vector2( 48, 256 )
 Name = "Round Shield"
-sprite_path = ExtResource( 41 )
+sprite_path = ExtResource( 42 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Shield/RoundShield" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Shield/RoundShield" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Shield/RoundShield" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "shield"
-paperdoll_sprite = ExtResource( 42 )
+paperdoll_sprite = ExtResource( 43 )
 accuracy = 0
 armor_class = 3
 
@@ -496,15 +522,15 @@ armor_class = 3
 editor/display_folded = true
 position = Vector2( 16, 256 )
 Name = "Buckler"
-sprite_path = ExtResource( 43 )
+sprite_path = ExtResource( 44 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Shield/Buckler1" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Shield/Buckler1" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Shield/Buckler1" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "shield"
-paperdoll_sprite = ExtResource( 44 )
+paperdoll_sprite = ExtResource( 45 )
 accuracy = 0
 armor_class = 2
 
@@ -513,15 +539,15 @@ armor_class = 2
 editor/display_folded = true
 position = Vector2( 0, 256 )
 Name = "Buckler"
-sprite_path = ExtResource( 45 )
+sprite_path = ExtResource( 46 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Shield/Buckler2" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Shield/Buckler2" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Shield/Buckler2" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "shield"
-paperdoll_sprite = ExtResource( 46 )
+paperdoll_sprite = ExtResource( 47 )
 accuracy = 0
 armor_class = 2
 
@@ -530,15 +556,15 @@ armor_class = 2
 editor/display_folded = true
 position = Vector2( -16, 256 )
 Name = "Buckler"
-sprite_path = ExtResource( 47 )
+sprite_path = ExtResource( 48 )
 stay_visible = true
 
 [node name="Item" parent="Equipment/Shield/Buckler3" index="1" instance=ExtResource( 10 )]
 
-[node name="Equipment" parent="Equipment/Shield/Buckler3" index="2" instance=ExtResource( 17 )]
+[node name="Equipment" parent="Equipment/Shield/Buckler3" index="2" instance=ExtResource( 18 )]
 
 equip_slot = "shield"
-paperdoll_sprite = ExtResource( 48 )
+paperdoll_sprite = ExtResource( 49 )
 accuracy = 0
 armor_class = 2
 
@@ -549,12 +575,12 @@ armor_class = 2
 editor/display_folded = true
 position = Vector2( 272, 112 )
 Name = "Vladimir"
-sprite_path = ExtResource( 49 )
+sprite_path = ExtResource( 50 )
 blocks_movement = true
 
-[node name="Paperdoll" parent="Hero/Godot" index="1" instance=ExtResource( 50 )]
+[node name="Paperdoll" parent="Hero/Godot" index="1" instance=ExtResource( 51 )]
 
-[node name="Player" parent="Hero/Godot" index="2" instance=ExtResource( 51 )]
+[node name="Player" parent="Hero/Godot" index="2" instance=ExtResource( 52 )]
 
 [node name="Fighter" parent="Hero/Godot" index="3" instance=ExtResource( 4 )]
 
@@ -570,7 +596,7 @@ base_min_damage = 1
 base_max_damage = 3
 invincible = true
 
-[node name="FighterGear" parent="Hero/Godot/Fighter" index="1" instance=ExtResource( 52 )]
+[node name="FighterGear" parent="Hero/Godot/Fighter" index="1" instance=ExtResource( 53 )]
 
 [node name="Camera" type="Camera2D" parent="Hero/Godot" index="4"]
 
@@ -604,8 +630,8 @@ editor_draw_drag_margin = false
 
 editor/display_folded = true
 Name = "Blast of Fire"
-sprite_path = ExtResource( 53 )
+sprite_path = ExtResource( 54 )
 
-[node name="FX" parent="FX/Fireball" index="1" instance=ExtResource( 54 )]
+[node name="FX" parent="FX/Fireball" index="1" instance=ExtResource( 55 )]
 
 

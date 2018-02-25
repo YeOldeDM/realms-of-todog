@@ -73,3 +73,7 @@ func _on_GodModeSwitch_toggled( button_pressed ):
 
 
 
+
+
+func _on_SummonerSwitch_toggled( button_pressed ):
+	$Summoner.visible = button_pressed

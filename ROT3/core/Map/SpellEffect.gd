@@ -71,3 +71,6 @@ func Fireball():
 
 
 
+func RandomUselessness():
+	RPG.messageboard.random_message()
+	return true
