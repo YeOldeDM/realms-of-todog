@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shield3_round.png-c4f6c1d13cf2f34ef860c7e2cb704402.stex"
+path="res://.import/shield_round3.png-b6ed09d49986b1500b7511db0d59f62d.stex"
 
 [deps]
 
-source_file="res://graphics/item/shields/shield3_round.png"
-source_md5="7e70339eb16eb0fc1c1763dd36fab249"
+source_file="res://graphics/doll/shield/shield_round3.png"
+source_md5="875650b3d16a0295520b7fd53d01aae3"
 
-dest_files=[ "res://.import/shield3_round.png-c4f6c1d13cf2f34ef860c7e2cb704402.stex" ]
-dest_md5="62bfe81e930302af2ba825d97cac62f3"
+dest_files=[ "res://.import/shield_round3.png-b6ed09d49986b1500b7511db0d59f62d.stex" ]
+dest_md5="139dc849267fb70a415137821cddf584"
 
 [params]
 
