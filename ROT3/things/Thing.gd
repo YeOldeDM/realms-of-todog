@@ -9,7 +9,9 @@ signal acted()	#Emitted when a Thing performs an action
 onready var map = get_parent()
 
 export(String, MULTILINE) var Name = "Thing"
-# Sprite to use for this Thing
+
+
+
 export(Texture) var sprite_path setget _set_sprite_path
 
 
@@ -27,6 +29,8 @@ var cell = Vector2() setget _set_cell, _get_cell
 # Components dictionary
 # Populated by Component children
 var components = {}
+
+var status_effects = {}
 
 #func has_component( what ):
 #	return what in comp

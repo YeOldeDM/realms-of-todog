@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://things/components/StatusEffect.gd" type="Script" id=1]
+
+[node name="StatusEffect" type="Node"]
+
+script = ExtResource( 1 )
+status_name = "Itchy Tasty"
+duration = 3
+brand_texture = null
+
+

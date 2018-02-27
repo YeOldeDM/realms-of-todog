@@ -10,6 +10,36 @@ var data = [[]]
 
 
 
+
+
+class Room:
+	# A Dungeon Room
+	var rect
+	var floor_tile_family
+	var wall_tile_family
+	
+	func _init( rect, floor_tile=null, wall_tile=null ):
+		self.rect = rect
+		self.floor_tile_family = floor_tile
+		self.wall_tile_family = wall_tile
+	
+	func get_floor_rect():
+		return Rect2( self.rect.position + Vector2(1,1), self.rect.size - Vector2(2,2) )
+
+	func occupies_cell( cell ):
+		return self.rect.intersects( cell )
+
+
+
+
+
+
+
+
+
+
+
+
 # Draw the map and fill it with Fog of War
 func draw_map( map ):
 	for x in range( map.size() ):
@@ -21,6 +51,19 @@ func draw_map( map ):
 			elif type == WALL:
 				i = RPG.get_random_tile_index_by_family( "walls", "brick_brown" )
 			set_cell( x, y, i )
+			
+			for room in map.rooms:
+				for x in range( room.rect.position.x, room.rect.end.x ):
+					for y in range( room.rect.position.y, room.rect.end.y ):
+						i = -1
+						type = map[x][y]
+						if type == FLOOR:
+							i = RPG.get_random_tile_index_by_family( "floors", room.floor_tile_family )
+						elif type == WALL:
+							i = RPG.get_random_tile_index_by_family( "walls", room.wall_tile_family )
+						if i >= 0:
+							set_cell( x, y, i )
+
 	var fog_rect = Rect2( 0, 0, map.size(), map[0].size() )
 	$FogMap.fill_rect( fog_rect )
 
@@ -39,8 +82,11 @@ func make_paths( map ):
 
 # Add an instanced Thing to the map at a cell position
 # Return OK if all is well, or return ERROR
-func add_thing( thing, where ):
+func add_thing( thing, where, start_found=false ):
 	
+	if start_found:
+		thing.found = true
+
 	add_child( thing )
 
 	thing.cell = where
@@ -164,18 +210,26 @@ func spawn_player( where ):
 func generate_map():
 	# Generate & Draw the Map
 	data = DunGen.Generate()
+	# Convert DunGen room rect array to Room classes
+	var rooms = []
+	for room in data.rooms:
+		var room_family = RPG.get_random_tile_family_pair()
+		rooms.append( Room.new( room, room_family[0], room_family[1] ) )
+	data.rooms = rooms
+	
 	draw_map( data.map )
-	# Build A* paths before spawning Things
+	# Build A* paths
 	make_paths( data.map )
-
+	
 
 
 
 
 func get_random_room_cell( room ):
+	var rect = room.get_floor_rect()
 	return Vector2( 
-		RPG.roll( room.position.x+1, room.end.x - 2), 
-		RPG.roll( room.position.y+1, room.end.y - 2 ) 
+		RPG.roll( rect.position.x, rect.end.x ), 
+		RPG.roll( rect.position.y, rect.end.y ) 
 		)
 
 
@@ -184,10 +238,20 @@ func get_random_room_cell( room ):
 
 func populate_room( room ):
 	var occupied = []
+	if room.occupies_cell( RPG.player.cell ):
+		occupied.append( RPG.player.cell )
 	for i in range( RPG.roll( 1,4 ) ):
-		var pos = get_random_room_cell( room )
-		while pos in occupied:
-			pos = get_random_room_cell( room )
+		var pos = get_random_room_cell(room)
+		var tries = 0
+		var passed = !pos in occupied
+		while !passed and tries < 5:	# Gives up after too many fails
+			pos = get_random_room_cell(room)
+			passed = !pos in occupied
+			tries += 1
+
+		if !passed:
+			break
+
 		occupied.append( pos )
 		
 		var choices = [

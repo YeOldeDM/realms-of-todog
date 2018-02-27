@@ -18,7 +18,8 @@ const TILE_FAMILY = {
 			"hive":[55, 56, 57, 58], 
 			"ice":[59, 60, 61, 62], 
 			"lair":[63, 64, 65, 66], 
-			"lava":[67, 68, 69, 70, 71, 72, 73, 74, 75, 76], 
+			"lava":[67, 68, 69, 70],
+			"marble":[71, 72, 73, 74, 75, 76], 
 			"mesh":[77, 78, 79, 80], 
 			"pebble_brown":[81, 82, 83, 84, 85, 86, 87, 88, 89], 
 			"rect_gray":[90, 91, 92, 93], 
@@ -102,7 +103,14 @@ func spawn( what ):
 	return thing
 
 
-
+func get_random_tile_family_pair():
+	var choices = [
+		["bog_green", "vines"],
+		["cobble_blood", "brick_dark"],
+		["marble", "marble"],
+		["sand_stone", "sandstone_wall"]
+		]
+	return choices[ randi() % choices.size() ]
 
 func get_random_tile_index_by_family( type, family ):
 	assert type in TILE_FAMILY

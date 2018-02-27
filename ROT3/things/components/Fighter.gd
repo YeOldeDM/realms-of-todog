@@ -128,8 +128,9 @@ func get_attack_bonus():
 
 func get_weapon():
 	if Gear:
-		if Gear.slots.weapon:
-			return Gear.slots.weapon
+		if 'slots' in Gear:
+			if Gear.slots.weapon:
+				return Gear.slots.weapon
 
 
 func get_weapon_damage():

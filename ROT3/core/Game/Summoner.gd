@@ -13,7 +13,7 @@ func _ready():
 
 func populate_tree( parent, data ):
 	for thing in data:
-		if thing.name != "Hero":
+		if not thing.name in ["Hero", "StatusEffect"]:
 			var itm = tree.create_item( parent )
 			itm.set_text(0, thing.name)
 			if "Name" in thing:
@@ -29,4 +29,4 @@ func _on_Spawn_pressed():
 	if meta:
 		var map = get_parent().world_map
 		var pos = RPG.player.cell
-		map.add_thing( RPG.spawn( meta ), pos )
+		map.add_thing( RPG.spawn( meta ), pos, true )

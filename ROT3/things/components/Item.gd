@@ -77,7 +77,9 @@ func use():
 	
 	if self.use_effect:
 		if world.get_node("SpellEffect").has_method( self.use_effect ):
-			used = world.get_node("SpellEffect").call( self.use_effect )
+			world.get_node("SpellEffect").call( self.use_effect )
+			used = yield( world.get_node("SpellEffect"), "executed" )
+
 	if used:
 		RPG.player.emit_signal("acted")
 		if self.use_type == 1:
@@ -87,6 +89,9 @@ func use():
 				Owner.kill()
 		elif self.use_type == 2:
 			self.charges -= 1
+		RPG.messageboard.message("You use the %s" % Owner.get_message_name() )
+	else:
+		RPG.messageboard.message_cancel()
 	return used
 
 

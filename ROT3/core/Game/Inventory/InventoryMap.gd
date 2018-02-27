@@ -163,10 +163,10 @@ func _on_InventoryAction_pressed( action ):
 		"Use":
 			if "item" in itm.components:
 				var used = itm.components.item.use()
-				if used:
-					RPG.messageboard.message("You use the %s" % itm.get_message_name() )
-				else:
-					RPG.messageboard.message_cancel()
+#				if used:
+#					RPG.messageboard.message("You use the %s" % itm.get_message_name() )
+#				else:
+#					RPG.messageboard.message_cancel()
 
 
 

@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://things/components/Item.gd" type="Script" id=1]
 
-[node name="Item" type="Node2D"]
+[sub_resource type="Animation" id=1]
+
+resource_name = "New Anim"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:flip_h")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="Item" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 stackable = false
@@ -14,8 +33,19 @@ brand_sprite = null
 
 [node name="Brand" type="Sprite" parent="." index="0"]
 
+z_index = 2
 centered = false
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Z Index" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Brand" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/New Anim" = SubResource( 1 )
+blend_times = [  ]
 
 [node name="Count" type="Label" parent="." index="1"]
 
