@@ -161,7 +161,7 @@ use_filter = false
 font_data = ExtResource( 10 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1415,7 +1415,6 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 toggle_mode = true
-pressed = true
 enabled_focus_mode = 2
 shortcut = null
 group = null
@@ -1557,6 +1556,7 @@ max_lines_visible = -1
 
 [node name="Summoner" type="PanelContainer" parent="." index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1695,8 +1695,6 @@ group = null
 text = "Hide this window"
 flat = false
 align = 1
-
-[node name="Sprite" type="Sprite" parent="." index="3"]
 
 [connection signal="gui_input" from="Frame/View/Port" to="Frame/View/Port/Viewport/World" method="_on_Port_gui_input"]
 

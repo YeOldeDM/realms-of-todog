@@ -18,6 +18,7 @@ name="Roguelike"
 
 [autoload]
 
+DATA="*res://global/DATA.tscn"
 RPG="*res://global/RPG.gd"
 FOV="*res://global/FOV.gd"
 DunGen="*res://global/DunGen.gd"
