@@ -5,7 +5,11 @@ extends Node
 export( String, MULTILINE ) var database_path = ""
 
 # If true, the item will begin equipped, if it's Equipment
+# will equip in slots by the position in parent
+# items that can't equip go to the inventory
 export( bool ) var start_equipped = true
+
+export( int,0,99 ) var quantity = 1 
 
 # Gear in the same option group will show up as a player option
 # The player chooses one piece of gear from the option group

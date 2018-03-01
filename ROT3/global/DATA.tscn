@@ -287,7 +287,7 @@ female_sprite = ExtResource( 34 )
 
 [node name="Jobs" type="Node" parent="." index="1"]
 
-[node name="Warrior" type="Node" parent="Jobs" index="0"]
+[node name="JobData" type="Node" parent="Jobs" index="0"]
 
 script = ExtResource( 35 )
 description = "A fighter who fights in fights"
@@ -297,65 +297,16 @@ natural_accuracy = 0
 natural_armor = 0
 natural_resist = 0
 
-[node name="StartingGear" type="Node" parent="Jobs/Warrior" index="0"]
+[node name="StartingGear" type="Node" parent="Jobs/JobData" index="0"]
 
-[node name="JobGearData" type="Node" parent="Jobs/Warrior/StartingGear" index="0"]
+[node name="JobGearData" type="Node" parent="Jobs/JobData/StartingGear" index="0"]
 
 script = ExtResource( 36 )
 database_path = ""
 start_equipped = true
+quantity = 1
 option_group = ""
 
-[node name="Perks" type="Node" parent="Jobs/Warrior" index="1"]
-
-[node name="Mage" type="Node" parent="Jobs" index="1"]
-
-script = ExtResource( 35 )
-description = "A wizard who wizards with wizards"
-HP_die = 2
-MP_die = 4
-natural_accuracy = -2
-natural_armor = -1
-natural_resist = 20
-
-[node name="Ninja" type="Node" parent="Jobs" index="2"]
-
-script = ExtResource( 35 )
-description = "Because everyone likes ninjas."
-HP_die = 4
-MP_die = 2
-natural_accuracy = 2
-natural_armor = -1
-natural_resist = 5
-
-[node name="Cleric" type="Node" parent="Jobs" index="3"]
-
-script = ExtResource( 35 )
-description = "Clericy cleric"
-HP_die = 6
-MP_die = 3
-natural_accuracy = 0
-natural_armor = 1
-natural_resist = 10
-
-[node name="Caveman" type="Node" parent="Jobs" index="4"]
-
-script = ExtResource( 35 )
-description = "Bam Bam!"
-HP_die = 10
-MP_die = 0
-natural_accuracy = -2
-natural_armor = 2
-natural_resist = -5
-
-[node name="Tourist" type="Node" parent="Jobs" index="5"]
-
-script = ExtResource( 35 )
-description = "Came for the beaches. Stayed because there are no beaches, or way out..."
-HP_die = 0
-MP_die = 0
-natural_accuracy = 0
-natural_armor = 0
-natural_resist = 0
+[node name="Perks" type="Node" parent="Jobs/JobData" index="1"]
 
 

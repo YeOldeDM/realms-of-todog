@@ -107,7 +107,7 @@ func get_random_tile_family_pair():
 	var choices = [
 		["bog_green", "vines"],
 		["cobble_blood", "brick_dark"],
-		["marble", "marble"],
+		["marble", "marble_wall"],
 		["sand_stone", "sandstone_wall"]
 		]
 	return choices[ randi() % choices.size() ]
@@ -118,6 +118,9 @@ func get_random_tile_index_by_family( type, family ):
 	var list = TILE_FAMILY[type][family]
 	var n = randi() % list.size()
 	return list[n]
+
+
+
 
 
 # Get a random int between two ints

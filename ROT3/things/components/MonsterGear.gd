@@ -1,5 +1,7 @@
 extends Node
 
+export(NodePath) var weapon_path
+
 export(int) var min_damage = 1
 export(int) var max_damage = 6
 

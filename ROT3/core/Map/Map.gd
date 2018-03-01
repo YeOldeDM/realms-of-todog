@@ -41,10 +41,11 @@ class Room:
 
 
 # Draw the map and fill it with Fog of War
-func draw_map( map ):
-	for x in range( map.size() ):
-		for y in range( map[x].size() ):
-			var type = map[x][y]
+func draw_map( data ):
+	clear()
+	for x in range( data.map.size() ):
+		for y in range( data.map[x].size() ):
+			var type = data.map[x][y]
 			var i = -1
 			if type == FLOOR:
 				i = RPG.get_random_tile_index_by_family( "floors", "pebble_brown" )
@@ -52,19 +53,19 @@ func draw_map( map ):
 				i = RPG.get_random_tile_index_by_family( "walls", "brick_brown" )
 			set_cell( x, y, i )
 			
-			for room in map.rooms:
-				for x in range( room.rect.position.x, room.rect.end.x ):
-					for y in range( room.rect.position.y, room.rect.end.y ):
-						i = -1
-						type = map[x][y]
-						if type == FLOOR:
-							i = RPG.get_random_tile_index_by_family( "floors", room.floor_tile_family )
-						elif type == WALL:
-							i = RPG.get_random_tile_index_by_family( "walls", room.wall_tile_family )
-						if i >= 0:
-							set_cell( x, y, i )
+	for room in data.rooms:
+		for x in range( room.rect.position.x, room.rect.end.x ):
+			for y in range( room.rect.position.y, room.rect.end.y ):
+				var i = -1
+				var type = data.map[x][y]
+				if type == FLOOR:
+					i = RPG.get_random_tile_index_by_family( "floors", room.floor_tile_family )
+				elif type == WALL:
+					i = RPG.get_random_tile_index_by_family( "walls", room.wall_tile_family )
+				if i >= 0:
+					set_cell( x, y, i )
 
-	var fog_rect = Rect2( 0, 0, map.size(), map[0].size() )
+	var fog_rect = Rect2( 0, 0, data.map.size(), data.map[0].size() )
 	$FogMap.fill_rect( fog_rect )
 
 func make_paths( map ):
@@ -217,7 +218,7 @@ func generate_map():
 		rooms.append( Room.new( room, room_family[0], room_family[1] ) )
 	data.rooms = rooms
 	
-	draw_map( data.map )
+	draw_map( data )
 	# Build A* paths
 	make_paths( data.map )
 	
@@ -228,52 +229,54 @@ func generate_map():
 func get_random_room_cell( room ):
 	var rect = room.get_floor_rect()
 	return Vector2( 
-		RPG.roll( rect.position.x, rect.end.x ), 
-		RPG.roll( rect.position.y, rect.end.y ) 
+		RPG.roll( rect.position.x, rect.end.x-1 ), 
+		RPG.roll( rect.position.y, rect.end.y-1 ) 
 		)
 
 
 
-
+func fill_room( room, what ):
+	var rect = room.get_floor_rect()
+	for x in range( rect.size.x ):
+		for y in range( rect.size.y ):
+			prints(x,y)
+			add_thing( RPG.spawn(what), Vector2(rect.position.x+x,rect.position.y+y) )
 
 func populate_room( room ):
 	var occupied = []
-	if room.occupies_cell( RPG.player.cell ):
-		occupied.append( RPG.player.cell )
-	for i in range( RPG.roll( 1,4 ) ):
+	var n = RPG.roll( 1,4 )
+	for i in range( n ):
 		var pos = get_random_room_cell(room)
 		var tries = 0
 		var passed = !pos in occupied
-		while !passed and tries < 5:	# Gives up after too many fails
-			pos = get_random_room_cell(room)
-			passed = !pos in occupied
-			tries += 1
+		for i in range(5):
+			if !passed:
+				pos = get_random_room_cell(room)
+				passed = !pos in occupied
 
-		if !passed:
-			break
-
-		occupied.append( pos )
-		
-		var choices = [
-			"Monster/GiantRat",
-			"Monster/GiantBat",
-			"Monster/Goblin",
-			"Monster/GreenSnake",
-			"Equipment/Weapon/Dagger",
-			"Equipment/Weapon/Club",
-			"Equipment/Weapon/Shortsword",
-			"Equipment/Body/Robes",
-			"Equipment/Body/LeatherJerkin",
-			"Equipment/Body/LeatherArmor",
-			"Equipment/Shield/RoundShield",
-			"Item/Potion/HealingPotion",
-			"Item/Wand/ConfusionWand",
-			"Item/Scroll/FireballScroll",
-			]
-		
-		var choice = choices[randi() % choices.size()]
-		
-		add_thing( RPG.spawn( choice ), pos )
+		if passed:
+			occupied.append( pos )
+			
+			var choices = [
+				"Monster/GiantRat",
+				"Monster/GiantBat",
+				"Monster/Goblin",
+				"Monster/GreenSnake",
+				"Equipment/Weapon/Dagger",
+				"Equipment/Weapon/Club",
+				"Equipment/Weapon/Shortsword",
+				"Equipment/Body/Robes",
+				"Equipment/Body/LeatherJerkin",
+				"Equipment/Body/LeatherArmor",
+				"Equipment/Shield/RoundShield",
+				"Item/Potion/HealingPotion",
+				"Item/Wand/ConfusionWand",
+				"Item/Scroll/FireballScroll",
+				]
+			
+			var choice = choices[randi() % choices.size()]
+			
+			add_thing( RPG.spawn( choice ), pos )
 
 
 

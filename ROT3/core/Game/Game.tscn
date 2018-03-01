@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://res/theme/DefaultTheme.tres" type="Theme" id=1]
 [ext_resource path="res://core/Game/Game.gd" type="Script" id=2]
@@ -160,6 +160,12 @@ use_mipmaps = true
 use_filter = false
 font_data = ExtResource( 10 )
 _sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 0
+use_mipmaps = false
+use_filter = false
 
 [node name="Game" type="Control" index="0"]
 
@@ -1602,10 +1608,12 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 7 )
 text = "The Summoner!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Tree" type="Tree" parent="Summoner/Box" index="1"]
 
