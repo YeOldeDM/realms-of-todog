@@ -179,6 +179,28 @@ func idle():
 #	print( "%s stands in place..." % Owner.Name )
 	Owner.emit_signal("acted")
 
+func find_empty_step_cells():
+	var cells = RPG.DIRECTIONS
+	var choices = []
+	for cell in cells: 
+		cell += Owner.cell
+		if not Owner.map.get_collider( cell ):
+			choices.append(cell)
+
+
+
+func step_confused():
+	# Step randomly or idle
+	
+	var step_choices = Owner.map.find_empty_cells_at( Owner.cell )
+	if randi()%10 < 1 or step_choices.empty():
+		# idle ~20% chance or if nowhere to wander..
+		idle()
+		return
+	var choice = step_choices[ randi() % step_choices.size() ]
+	step_or_attack( choice, true )
+
+
 
 # Step one cell in a direction, or attack a valid target
 # emits an "acted" signal if the action is valid
@@ -207,6 +229,9 @@ func step_or_attack( dir, force_action=false ):
 		if Owner:
 			Owner.emit_signal("acted")
 
+
+
+
 # Get a damage state index based on
 # percent HP left. Used for Fighter
 # LifeBar node.
@@ -219,6 +244,9 @@ func get_damage_state():
 	elif diff >= 0.25:	return 4	# Critically Injured
 	elif diff >= 0.1:	return 5	# Nearly Dead
 	else:				return 6	# Dead
+
+
+
 
 
 func equip_item( thing ):
@@ -235,6 +263,9 @@ func equip_item( thing ):
 		thing.components.equipment.equipped = true
 		Gear.update_paperdoll()
 		return "OK"
+
+
+
 
 func dequip_item( thing ):
 	assert Gear

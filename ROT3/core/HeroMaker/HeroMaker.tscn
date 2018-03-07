@@ -120,6 +120,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="Choices" type="VBoxContainer" parent="Species/Box" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

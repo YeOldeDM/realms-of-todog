@@ -10,7 +10,14 @@ onready var inventory_map = $Frame/Char/Inventory/InventoryMap
 
 
 
-
+func get_game_dict():
+	var data = {}
+	data.map = world_map.data
+	for room in data.map.rooms:
+		room = inst2dict(room)
+	data.map_things = []
+	for thing in world_map.get_things():
+		data.map_things.append( thing.get_save_dict() )
 
 
 func _ready():

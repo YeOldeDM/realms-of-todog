@@ -181,7 +181,13 @@ func get_things_in_cells( cells ):
 	return list
 
 
-
+func find_empty_cells_at( where ):
+	var cells = RPG.DIRECTIONS
+	var choices = []
+	for cell in cells: 
+		if not get_collider( cell + where ):
+			choices.append(cell)
+	return choices
 
 
 func spawn_player( where ):

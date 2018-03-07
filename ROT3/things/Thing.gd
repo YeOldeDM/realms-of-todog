@@ -32,12 +32,8 @@ var components = {}
 
 var status_effects = {}
 
-#func has_component( what ):
-#	return what in comp
-#
-#func get_component( what ):
-#	if has_component( what ):
-#		return comp[what]
+func get_save_dict():
+	return
 
 func get_message_name():
 	if "player" in self.components:

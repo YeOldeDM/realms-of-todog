@@ -20,7 +20,7 @@ signal request_drop(who)
 
 onready var Owner = get_parent()
 
-
+export(float) var weight = 1.0
 
 export(bool) var stackable = false
 export(bool) var throwable = true

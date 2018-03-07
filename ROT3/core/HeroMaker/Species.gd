@@ -19,10 +19,12 @@ func select_species( spec ):
 	pass
 
 func show_species( spec ):
-	pass
+	$Box/Info/Name/Label.text = spec.name
+	$Box/Info/Description.text = spec.description
 
 func clear_species():
-	pass
+	$Box/Info/Name/Label.text = ""
+	$Box/Info/Description.text = ""
 
 
 func _ready():

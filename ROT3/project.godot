@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Roguelike"
+config/name="Realms of Todog"
 run/main_scene="res://core/Game/Game.tscn"
 config/icon="res://mycon.png"
 icon="res://icon.png"

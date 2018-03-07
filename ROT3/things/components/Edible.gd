@@ -1,5 +1,6 @@
 extends Node
 
+onready var Owner = get_parent()
 
 export(int) var hunger_filled = 1
 
