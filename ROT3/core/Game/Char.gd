@@ -13,9 +13,15 @@ func draw_name_and_genus():
 		J = RPG.ABBREV[RPG.player_data.job]
 	$Genus.text = S+R+J
 
+func draw_title():
+	var n = ProjectSettings.get_setting("application/config/name")
+	var v = "%d.%d.%d" % [ DATA.VERSION.MAJOR, DATA.VERSION.MINOR, DATA.VERSION.BABY, ]
+	$Top/GameVersion.text = n+ " " +v
 
 func _ready():
+	draw_title()
 	draw_name_and_genus()
+	
 
 func _on_HP_changed( what ):
 	$HP/Bar.value = what
