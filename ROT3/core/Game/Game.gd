@@ -13,6 +13,12 @@ onready var inventory_map = $Frame/Char/Inventory/InventoryMap
 func get_game_dict():
 	# Build Data
 	var data = {}
+	# Get Version Data
+	data.version = {
+		"MAJOR": DATA.VERSION.MAJOR,
+		"MINOR": DATA.VERSION.MINOR,
+		"BABY": DATA.VERSION.BABY,
+		}
 	# Get Map Data
 	data.map = world_map.data
 	# Get Rooms Data

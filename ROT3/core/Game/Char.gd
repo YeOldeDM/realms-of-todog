@@ -43,10 +43,9 @@ func _on_World_game_time_changed( to ):
 	var hrs = to/60/60 % 24
 	var days = to/60/60/24
 	
-	var txt = "%s:%s:%s:%s" % \
-		[str(days).pad_zeros(2),
+	var txt = "day %d; %s:%s:%s" % \
+		[days,
 		str(hrs).pad_zeros(2),
 		str(mins).pad_zeros(2),
-		str(secs).pad_zeros(2),
-		]
+		str(secs).pad_zeros(2)]
 	$Time.text = txt
