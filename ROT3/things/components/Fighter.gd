@@ -34,6 +34,18 @@ onready var Owner = get_parent()
 
 var Gear	# Set by FighterGear Component
 
+
+func get_save_dict():
+	var data = {
+		"HP": self.HP,
+	}
+	if Gear:
+		if Gear.has_method("get_save_dict"):
+			data.gear = Gear.get_save_dict()
+	return data
+
+
+
 func is_HP_full():
 	return self.HP >= self.maxHP
 

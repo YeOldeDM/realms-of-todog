@@ -18,6 +18,13 @@ var slots = {
 	"ring":		null,
 	}
 
+func get_save_dict():
+	var data = {}
+	for slot in slots:
+		if slots[slot]:
+			data[slot] = slots[slot].SID
+	return data
+
 func update_paperdoll():
 	if "paperdoll" in get_parent().Owner.components:
 		var doll = get_parent().Owner.components.paperdoll

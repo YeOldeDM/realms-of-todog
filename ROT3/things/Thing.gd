@@ -32,8 +32,27 @@ var components = {}
 
 var status_effects = {}
 
+var SID # Spawn ID
+var _dbpath # source Path to DataBase
+
 func get_save_dict():
-	return
+	assert self._dbpath
+	var data = {
+		"id": self.SID,
+		"path": self._dbpath,
+		"cell": {
+			"x": self.cell.x,
+			"y": self.cell.y,
+			},
+		"found": self.found,
+		"components": {},
+	}
+	for component in self.components:
+		if self.components[component].has_method("get_save_dict"):
+			var comp_data = self.components[component].get_save_dict()
+			data.components[component] = comp_data
+	
+	return data
 
 func get_message_name():
 	if "player" in self.components:

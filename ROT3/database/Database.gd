@@ -2,7 +2,10 @@ extends Node
 
 func get_thing( path ):
 	if has_node( path ):
-		return get_node( path ).duplicate()
+		var new = get_node( path ).duplicate()
+		if new:
+			new._dbpath = path
+			return new
 
 
 func get_random_monster():

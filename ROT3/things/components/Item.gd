@@ -36,7 +36,11 @@ export(Texture) var brand_sprite = null setget _set_brand_sprite
 
 var stack = 1 setget _set_stack
 
-
+func get_save_dict():
+	return {
+		"charges": self.charges,
+		"stack": self.stack,
+		}
 
 func stack( others ):
 	self.stack += others.size()

@@ -31,6 +31,12 @@ var ai_mode = MODE_STOP
 var old_ai_mode = MODE_CHASE			# AI mode to revert to when temp AI ends
 var temp_ai_time = 0	# temporary AI counter, in seconds
 
+func get_save_dict():
+	return {
+		"awake": self.awake,
+		"target": self.target,
+		}
+
 func wake_up( by_who ):
 	self.awake = true
 	self.target = by_who

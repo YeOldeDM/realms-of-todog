@@ -29,6 +29,17 @@ class Room:
 	func occupies_cell( cell ):
 		return self.rect.intersects( cell )
 
+	func get_save_dict():
+		return {
+			"rect":[
+				self.rect.position.x,
+				self.rect.position.y,
+				self.rect.size.x,
+				self.rect.size.y
+				],
+			"floor_tile_family": self.floor_tile_family,
+			"wall_tile_family": self.wall_tile_family,
+		}
 
 
 
@@ -310,7 +321,7 @@ func go():
 	# Fill the map with Stuff
 	populate_rooms( data.rooms )
 	# Always spawn the player last!
-	spawn_player( data.start_pos )
+	spawn_player( Vector2( data.start_x, data.start_y ) )
 
 
 

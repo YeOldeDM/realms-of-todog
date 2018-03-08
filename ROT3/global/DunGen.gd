@@ -79,7 +79,8 @@ func Generate( map_size=Vector2(65,50), room_count=20, room_size=Vector2(5,9), w
 	return {
 		"map":			map,
 		"rooms":		rooms,
-		"start_pos":	start_pos,
+		"start_x":	start_pos.x, # For JSON storage
+		"start_y":	start_pos.y, # don't use Vec2
 		}
 
 

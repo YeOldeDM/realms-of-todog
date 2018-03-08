@@ -11,14 +11,23 @@ onready var inventory_map = $Frame/Char/Inventory/InventoryMap
 
 
 func get_game_dict():
+	# Build Data
 	var data = {}
+	# Get Map Data
 	data.map = world_map.data
+	# Get Rooms Data
+	var room_dicts = []
 	for room in data.map.rooms:
-		room = inst2dict(room)
+		room_dicts.append( room.get_save_dict() )
+	data.map.rooms = room_dicts
+	# Get Map Things Data
 	data.map_things = []
 	for thing in world_map.get_things():
 		data.map_things.append( thing.get_save_dict() )
-
+	# Get Inventory Things Data
+	# Get global Player Data
+	data.player_data = RPG.player_data
+	return data
 
 func _ready():
 	RPG.game = self
@@ -71,7 +80,8 @@ func _on_GodModeSwitch_toggled( button_pressed ):
 	if RPG.player:
 		RPG.player.components.fighter.invincible = button_pressed
 		RPG.messageboard.message( "GOD MODE %s" % ["OFF","ON"][int(button_pressed)], RPG.messageboard.COLOR_SYSTEM )
-
+	
+	RPG.save_game()
 
 
 

@@ -95,10 +95,23 @@ var messageboard
 
 onready var database = preload("res://database/Database.tscn").instance()
 
+func save_game():
+	var file = File.new()
+	var data = game.get_game_dict()
+	var opened = file.open("res://SAVE.json", File.WRITE)
+	if !opened==OK: 
+		print("couldn't open!")
+		return
+	file.store_line( to_json( data ) )
+	file.close()
+	
 
-
+var _SID = 0
 func spawn( what ):
 	var thing = database.get_thing( what )
+	
+	thing.SID = _SID
+	_SID += 1
 	
 	return thing
 
