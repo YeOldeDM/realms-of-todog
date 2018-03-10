@@ -75,17 +75,14 @@
 [ext_resource path="res://things/components/FX.tscn" type="PackedScene" id=73]
 [ext_resource path="res://things/components/StatusEffect.tscn" type="PackedScene" id=74]
 
-[node name="Database" type="Node" index="0"]
+[node name="Database" type="Node"]
 
 script = ExtResource( 1 )
 
 [node name="Monster" type="Node" parent="." index="0"]
 
-editor/display_folded = true
-
 [node name="GiantRat" parent="Monster" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 464, 0 )
 Name = "Giant Rat"
 sprite_path = ExtResource( 3 )
@@ -180,7 +177,6 @@ default_mode = null
 
 [node name="Hog" parent="Monster" index="4" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 464, 128 )
 Name = "Hog"
 sprite_path = ExtResource( 10 )
@@ -203,13 +199,10 @@ default_mode = 1
 
 [node name="Item" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Potion" type="Node" parent="Item" index="0"]
 
 [node name="HealingPotion" parent="Item/Potion" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 0, 32 )
 Name = "Potion of Healing"
 sprite_path = ExtResource( 11 )
@@ -316,8 +309,6 @@ stackable = true
 [node name="Edible" parent="Item/Food/Apple" index="2" instance=ExtResource( 22 )]
 
 [node name="Equipment" type="Node" parent="." index="2"]
-
-editor/display_folded = true
 
 [node name="Weapon" type="Node" parent="Equipment" index="0"]
 
@@ -627,7 +618,6 @@ armor_class = 6
 
 [node name="ElvenLeather" parent="Equipment/Body" index="3" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 80, 320 )
 Name = "Elven Leather Armor"
 sprite_path = ExtResource( 50 )

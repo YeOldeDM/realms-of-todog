@@ -20,6 +20,4 @@ texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset", "Z Index" ]
 
-[connection signal="about_to_act" from="." to="." method="_about_to_act"]
-
 

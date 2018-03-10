@@ -94,6 +94,7 @@ func _rpg_process(delta=5.0):
 		self.components.AI.act(delta)
 
 func _ready():
+	connect( "about_to_act", self, "_about_to_act" )
 	add_to_group("things")
 	if self.blocks_movement:
 		add_to_group("blockers")

@@ -18,7 +18,7 @@ func pickup_items_in_cell( cell=Owner.cell ):
 			if "item" in thing.components:
 				thing.components.item.pickup()
 				RPG.messageboard.message("You pick up the %s" % thing.get_message_name())
-				Owner.emit_signal("acted")
+				Owner.emit_signal("acted", DATA.DEFAULT_ACTION_TIME)
 				break
 
 func kill( from ):
