@@ -52,7 +52,7 @@ func _on_thing_request_pickup( thing ):
 func _on_thing_request_drop( thing ):
 	inventory_map.remove_from_inventory(thing)
 	thing = world_map.add_thing( thing, RPG.player.cell )
-	RPG.player.emit_signal("acted")
+	RPG.player.emit_signal("acted", DATA.DEFAULT_ACTION_TIME)
 	# Return an error state?
 
 
@@ -63,7 +63,7 @@ func _on_thing_request_equip( thing ):
 		RPG.message.message( "That is already equipped!" )
 	elif did_equip == "OK":	#SPOOPY!
 		RPG.messageboard.message( "You equipped the %s" % thing.get_message_name() )
-		RPG.player.emit_signal("acted")
+		RPG.player.emit_signal("acted", DATA.DEFAULT_ACTION_TIME) 
 	else:
 		RPG.messageboard.message( "You must remove the %s before you can equip the %s" 
 									% [ did_equip, thing.get_message_name()] )
@@ -74,7 +74,7 @@ func _on_thing_request_dequip( thing ):
 	var did_dequip = RPG.player.components.fighter.dequip_item( thing )
 	if did_dequip == OK:
 		RPG.messageboard.message( "You remove the %s" % thing.get_message_name() )
-		RPG.player.emit_signal("acted")
+		RPG.player.emit_signal("acted", DATA.DEFAULT_ACTION_TIME) 
 	else:
 		RPG.messageboard.message_cantdo()
 	# Return an error state?
@@ -100,3 +100,16 @@ func _on_GodModeSwitch_toggled( button_pressed ):
 
 func _on_SummonerSwitch_toggled( button_pressed ):
 	$Summoner.visible = button_pressed
+
+
+func _input(ev):
+	if ev is InputEventKey:
+		if ev.pressed and !ev.is_echo():
+			match ev.scancode:
+				KEY_F1:
+					$HelpPanel.popup_centered()
+				KEY_ESCAPE:
+					print("POOP")
+#			if ev.scancode == KEY_F1:
+#				$HelpPanel.popup()
+#			elif ev.scancode == 
