@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://res/theme/DefaultTheme.tres" type="Theme" id=1]
 [ext_resource path="res://core/Game/Game.gd" type="Script" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://core/Game/Inventory/InventoryMap.tscn" type="PackedScene" id=7]
 [ext_resource path="res://graphics/misc/cursor_green.png" type="Texture" id=8]
 [ext_resource path="res://graphics/misc/cursor.png" type="Texture" id=9]
-[ext_resource path="res://fonts/VerilySerifMono.otf" type="DynamicFontData" id=10]
-[ext_resource path="res://core/Game/Summoner.gd" type="Script" id=11]
+[ext_resource path="res://core/Game/Summoner.gd" type="Script" id=10]
+[ext_resource path="res://core/Game/ExaminePanel.gd" type="Script" id=11]
+[ext_resource path="res://fonts/VerilySerifMono.otf" type="DynamicFontData" id=12]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -124,7 +125,13 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="DynamicFont" id=5]
+
+size = 0
+use_mipmaps = false
+use_filter = false
+
+[sub_resource type="StyleBoxFlat" id=6]
 
 content_margin_left = 4.0
 content_margin_right = 4.0
@@ -153,21 +160,15 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Content Margin" ]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 
 size = 24
 use_mipmaps = true
 use_filter = false
-font_data = ExtResource( 10 )
+font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=7]
-
-size = 0
-use_mipmaps = false
-use_filter = false
-
-[node name="Game" type="Control" index="0"]
+[node name="Game" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -189,6 +190,7 @@ _sections_unfolded = [ "Margin", "Rect", "Theme", "Visibility" ]
 
 [node name="Frame" type="HBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -203,6 +205,7 @@ alignment = 0
 
 [node name="View" type="VBoxContainer" parent="Frame" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1223,7 +1226,6 @@ max_lines_visible = -1
 
 [node name="InventoryActions" type="GridContainer" parent="Frame/Char" index="9"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1489,143 +1491,7 @@ flat = false
 align = 0
 _sections_unfolded = [ "Visibility" ]
 
-[node name="ExaminePanel" type="PopupPanel" parent="." index="1"]
-
-editor/display_folded = true
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -246.5
-margin_top = -212.5
-margin_right = 246.5
-margin_bottom = 212.5
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/panel = SubResource( 5 )
-popup_exclusive = false
-_sections_unfolded = [ "custom_styles" ]
-
-[node name="Box" type="VBoxContainer" parent="ExaminePanel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 4.0
-margin_right = -4.0
-margin_bottom = -4.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Margin" ]
-
-[node name="Title" type="Label" parent="ExaminePanel/Box" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 485.0
-margin_bottom = 29.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
-custom_colors/font_color = Color( 0.792969, 0.572705, 0.411972, 1 )
-text = "A Thing"
-align = 1
-valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Size Flags", "custom_colors" ]
-
-[node name="HSeparator" type="HSeparator" parent="ExaminePanel/Box" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 33.0
-margin_right = 485.0
-margin_bottom = 37.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Content" type="RichTextLabel" parent="ExaminePanel/Box" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 41.0
-margin_right = 485.0
-margin_bottom = 396.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-bbcode_enabled = true
-bbcode_text = "This is some test text.
-This block will be filled with some crap telling you all the crappy things about the crap you find in this crappy dungeon.
-
-[b]Kerplah![/b]"
-visible_characters = -1
-percent_visible = 1.0
-meta_underlined = true
-tab_size = 4
-text = "This is some test text.
-This block will be filled with some crap telling you all the crappy things about the crap you find in this crappy dungeon.
-
-Kerplah!"
-scroll_active = true
-scroll_following = false
-selection_enabled = false
-override_selected_font_color = false
-_sections_unfolded = [ "Size Flags" ]
-
-[node name="DismissLabel" type="Label" parent="ExaminePanel/Box" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 400.0
-margin_right = 485.0
-margin_bottom = 417.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "click anywhere to continue!"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Summoner" type="PanelContainer" parent="." index="2"]
+[node name="Summoner" type="PanelContainer" parent="." index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -1642,7 +1508,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 11 )
+script = ExtResource( 10 )
 
 [node name="Box" type="VBoxContainer" parent="Summoner" index="0"]
 
@@ -1676,7 +1542,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 text = "The Summoner!"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1775,6 +1641,143 @@ text = "Hide this window"
 flat = false
 align = 1
 
+[node name="ExaminePanel" type="PopupPanel" parent="." index="2"]
+
+pause_mode = 2
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -246.5
+margin_top = -212.5
+margin_right = 246.5
+margin_bottom = 212.5
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/panel = SubResource( 6 )
+popup_exclusive = false
+script = ExtResource( 11 )
+_sections_unfolded = [ "Pause", "custom_styles" ]
+
+[node name="Box" type="VBoxContainer" parent="ExaminePanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = -4.0
+margin_bottom = -4.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Title" type="Label" parent="ExaminePanel/Box" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 485.0
+margin_bottom = 29.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.792969, 0.572705, 0.411972, 1 )
+text = "A Thing"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Size Flags", "custom_colors" ]
+
+[node name="HSeparator" type="HSeparator" parent="ExaminePanel/Box" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 33.0
+margin_right = 485.0
+margin_bottom = 37.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Content" type="RichTextLabel" parent="ExaminePanel/Box" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 41.0
+margin_right = 485.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+bbcode_text = "This is some test text.
+This block will be filled with some crap telling you all the crappy things about the crap you find in this crappy dungeon.
+
+[b]Kerplah![/b]"
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "This is some test text.
+This block will be filled with some crap telling you all the crappy things about the crap you find in this crappy dungeon.
+
+Kerplah!"
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Size Flags" ]
+
+[node name="DismissLabel" type="Label" parent="ExaminePanel/Box" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 400.0
+margin_right = 485.0
+margin_bottom = 417.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "press any key or click anywhere to continue!"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [connection signal="gui_input" from="Frame/View/Port" to="Frame/View/Port/Viewport/World" method="_on_Port_gui_input"]
 
 [connection signal="mouse_exited" from="Frame/View/Port" to="Frame/View/Port/Viewport/World" method="_on_Port_mouse_exited"]
@@ -1792,5 +1795,11 @@ align = 1
 [connection signal="toggled" from="Frame/Char/Bottom/SummonerSwitch" to="." method="_on_SummonerSwitch_toggled"]
 
 [connection signal="pressed" from="Summoner/Box/Options/Spawn" to="Summoner" method="_on_Spawn_pressed"]
+
+[connection signal="about_to_show" from="ExaminePanel" to="ExaminePanel" method="_on_ExaminePanel_about_to_show"]
+
+[connection signal="gui_input" from="ExaminePanel" to="ExaminePanel" method="_on_ExaminePanel_gui_input"]
+
+[connection signal="popup_hide" from="ExaminePanel" to="ExaminePanel" method="_on_ExaminePanel_popup_hide"]
 
 

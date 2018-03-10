@@ -38,6 +38,7 @@ func _on_InventoryMap_item_selected( what ):
 
 
 func _on_World_game_time_changed( to ):
+	to = int(to)
 	var secs = to % 60
 	var mins = to/60 % 60
 	var hrs = to/60/60 % 24

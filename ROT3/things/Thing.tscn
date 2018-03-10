@@ -7,6 +7,7 @@
 
 script = ExtResource( 1 )
 Name = "Thing"
+description = "it's a thing."
 sprite_path = "res://graphics/player/base/human_m.png"
 blocks_movement = false
 blocks_sight = false
@@ -18,5 +19,7 @@ z_index = 1
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset", "Z Index" ]
+
+[connection signal="about_to_act" from="." to="." method="_about_to_act"]
 
 

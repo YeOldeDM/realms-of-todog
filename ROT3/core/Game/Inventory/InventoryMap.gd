@@ -155,7 +155,8 @@ func _on_InventoryAction_pressed( action ):
 
 
 		"Examine":
-			RPG.messageboard.message_cantdo()
+			if itm:
+				RPG.game.get_node("ExaminePanel").thing = itm
 
 		"Throw":
 			RPG.messageboard.message_cantdo()

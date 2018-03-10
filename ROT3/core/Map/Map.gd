@@ -365,14 +365,16 @@ func _on_player_map_cell_changed( from, to ):
 # Main gameplay loop!
 # Called after Player performs an action
 # All other actors act in turn before Player can act again
-func _on_player_acted():
+func _on_player_acted(delta):
 	for actor in get_actors():
 		if "AI" in actor.components and actor != RPG.player:
-			actor.components.AI.act()
+#			actor.components.AI.act()
+			actor.emit_signal("about_to_act", delta)
+
 	for thing in get_fx():
 		thing.components.FX.life -= 1
 	# Add 5 sec to game time
-	get_parent().game_time += 5
+	get_parent().game_time += delta
 
 
 

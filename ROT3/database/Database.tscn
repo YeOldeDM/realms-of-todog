@@ -317,6 +317,8 @@ stackable = true
 
 [node name="Equipment" type="Node" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Weapon" type="Node" parent="Equipment" index="0"]
 
 editor/display_folded = true
@@ -871,6 +873,7 @@ sprite_path = ExtResource( 72 )
 [node name="Confused" parent="StatusEffect" index="0" instance=ExtResource( 74 )]
 
 status_name = "Confused"
+duration = 120
 brand_texture = ExtResource( 15 )
 
 

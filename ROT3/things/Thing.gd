@@ -4,12 +4,20 @@ tool
 const FALLBACK_SPRITE = "res://graphics/misc/todo.png"
 
 signal map_cell_changed( from, to )
-signal acted()	#Emitted when a Thing performs an action
+signal acted(delta)	#Emitted when a Thing performs an action
+
+signal about_to_act(delta) #Emitted when a Thing begins their action
+
+
+
+
+
+
 
 onready var map = get_parent()
 
 export(String, MULTILINE) var Name = "Thing"
-
+export(String, MULTILINE) var description = "it's a thing."
 
 
 export(Texture) var sprite_path setget _set_sprite_path
@@ -78,6 +86,13 @@ func kill():
 		emit_signal("map_cell_changed", self.cell, null)
 	queue_free()
 
+
+func _rpg_process(delta=5.0):
+	for status in self.status_effects.values():
+		status._rpg_process(delta)
+	if "AI" in self.components:
+		self.components.AI.act(delta)
+
 func _ready():
 	add_to_group("things")
 	if self.blocks_movement:
@@ -105,3 +120,7 @@ func _set_sprite_path( what ):
 		$Sprite.texture = sprite_path
 
 
+
+
+func _about_to_act(delta):
+	_rpg_process(delta)

@@ -30,9 +30,7 @@ enum RACE {
 	GODOT
 	}
 
-const RACES= {
-	HUMAN:{
-		"name":	"Human",
-		"description":	"Some guy",
-		},
-	}
+
+
+
+const DEFAULT_ACTION_TIME = 5.0	# Fallback delta value for an action

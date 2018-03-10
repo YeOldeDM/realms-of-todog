@@ -156,6 +156,7 @@ func get_weapon_damage():
 	damage_roll += self.get_strength() / 2
 	return damage_roll
 
+
 func get_armor_class():
 	var ac = 10 + self.get_dexterity() / 4
 	if Gear:
@@ -189,7 +190,7 @@ func attack( who ):
 # Spend an action standing still doing nothing
 func idle():
 #	print( "%s stands in place..." % Owner.Name )
-	Owner.emit_signal("acted")
+	Owner.emit_signal("acted",DATA.DEFAULT_ACTION_TIME)
 
 func find_empty_step_cells():
 	var cells = RPG.DIRECTIONS
@@ -239,7 +240,7 @@ func step_or_attack( dir, force_action=false ):
 	# Emit the acted signal, or not..
 	if acted or force_action:
 		if Owner:
-			Owner.emit_signal("acted")
+			Owner.emit_signal("acted",DATA.DEFAULT_ACTION_TIME)
 
 
 

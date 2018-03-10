@@ -31,11 +31,56 @@ var ai_mode = MODE_STOP
 var old_ai_mode = MODE_CHASE			# AI mode to revert to when temp AI ends
 var temp_ai_time = 0	# temporary AI counter, in seconds
 
+
+func step( direction, attack_collider=true, avoid_walls=true, force_action=false):
+	# direction: Vector2 relative direction of movement
+	# attack_collider: this Thing attacks a collider that can be attacked
+	# avoid_walls: dont count the step as an action if you step into a collider
+	# force_action: emit the "acted" signal no matter what
+	
+	
+	# Clamp direction vector so travel is only max 1 cell
+	direction.x = clamp(direction.x, -1, 1)
+	direction.y = clamp(direction.y, -1, 1)
+	
+	# Calculate new cell
+	var new_cell = Owner.cell + direction
+	var acted = true
+	# Check for colliders at new cell
+	var collider = Owner.map.get_collider( new_cell )
+	if collider == Owner.map: # if the collider is a wall..
+		if avoid_walls:
+			acted = false # dont count this as an action
+		else:
+			RPG.messageboard.message( "%s walks into the wall with a thud!" % Owner.get_message_name() )
+			
+	elif collider != null and collider != self: # if collider can be attacked..
+#		print( "%s punches the %s in the face!" % [Owner.Name, collider.Name] )
+		if attack_collider:
+			if "fighter" in Owner.components:
+				Owner.components.fighter.attack( collider )
+		elif not avoid_walls:
+			RPG.messageboard.message( "%s stumbled right into %s, watch out!" ) % \
+							[Owner.get_message_name(), collider.get_message_name()]
+		else:
+			acted = false # dont count this as an action
+	else: # the cell is empty, so step there
+		Owner.cell = new_cell
+
+	# Emit the acted signal, if we really acted..
+	if acted or force_action:
+		Owner.emit_signal("acted",DATA.DEFAULT_ACTION_TIME)
+
+
+
+
 func get_save_dict():
 	return {
 		"awake": self.awake,
 		"target": self.target,
 		}
+
+
 
 func wake_up( by_who ):
 	self.awake = true
@@ -48,6 +93,7 @@ func confuse( length=60 ):
 	self.ai_mode = MODE_CONFUSED
 	temp_ai_time = length
 	RPG.messageboard.message("%s looks confused." % Owner.get_message_name() )
+
 
 func act_chase():
 	if self.target:
