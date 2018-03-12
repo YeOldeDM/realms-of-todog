@@ -75,7 +75,7 @@
 [ext_resource path="res://things/components/FX.tscn" type="PackedScene" id=73]
 [ext_resource path="res://things/components/StatusEffect.tscn" type="PackedScene" id=74]
 
-[node name="Database" type="Node"]
+[node name="Database" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
