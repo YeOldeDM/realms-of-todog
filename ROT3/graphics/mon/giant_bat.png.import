@@ -6,7 +6,11 @@ path="res://.import/giant_bat.png-e4d5b3790ecdb969158ef894512813ed.stex"
 
 [deps]
 
+source_file="res://graphics/mon/giant_bat.png"
 source_md5="644b9411c9d6a190ad726a3f56be51e1"
+
+dest_files=[ "res://.import/giant_bat.png-e4d5b3790ecdb969158ef894512813ed.stex" ]
+dest_md5="1148fbf47610583bfdf4a17255e55c5b"
 
 [params]
 

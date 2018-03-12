@@ -6,7 +6,11 @@ path="res://.import/vault3.png-1178ad4f682926df496bb7bdffb966d0.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/vault3.png"
 source_md5="c77c26e608ca1a6e8bc820c52822c633"
+
+dest_files=[ "res://.import/vault3.png-1178ad4f682926df496bb7bdffb966d0.stex" ]
+dest_md5="c7155b3cb28e6bd09cca38973ff4f9f0"
 
 [params]
 

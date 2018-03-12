@@ -6,7 +6,11 @@ path="res://.import/pebble_red0.png-6bf9dc1f26cfda0a8e8e05e80ab7cae3.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/pebble_red0.png"
 source_md5="a96d334a8bf852150b5afdb4af2c66f0"
+
+dest_files=[ "res://.import/pebble_red0.png-6bf9dc1f26cfda0a8e8e05e80ab7cae3.stex" ]
+dest_md5="42f12cd6a94f34ba9de36917cf7670a1"
 
 [params]
 

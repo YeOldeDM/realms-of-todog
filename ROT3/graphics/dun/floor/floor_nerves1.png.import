@@ -6,7 +6,11 @@ path="res://.import/floor_nerves1.png-db217a2b0a9165348cf228cae4e7842c.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/floor_nerves1.png"
 source_md5="699686bc323db5bcc92c9c72a1e2dea6"
+
+dest_files=[ "res://.import/floor_nerves1.png-db217a2b0a9165348cf228cae4e7842c.stex" ]
+dest_md5="4fbc1ebdce8b4e8eb2e875aee765aee4"
 
 [params]
 

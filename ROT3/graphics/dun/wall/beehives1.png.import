@@ -6,7 +6,11 @@ path="res://.import/beehives1.png-47009eff13dbc4c49975300a0102b5f5.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/beehives1.png"
 source_md5="098f898006e3fb5cd6d8b3008093b636"
+
+dest_files=[ "res://.import/beehives1.png-47009eff13dbc4c49975300a0102b5f5.stex" ]
+dest_md5="cfc3e63ff9129ba0f004400ae7779d96"
 
 [params]
 

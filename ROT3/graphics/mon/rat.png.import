@@ -6,7 +6,11 @@ path="res://.import/rat.png-fd73c383aec5ba7af78fa5dca6e8ed7e.stex"
 
 [deps]
 
+source_file="res://graphics/mon/rat.png"
 source_md5="f9ffed775c50b531e0cf4be737277106"
+
+dest_files=[ "res://.import/rat.png-fd73c383aec5ba7af78fa5dca6e8ed7e.stex" ]
+dest_md5="00fbc8dd63b0db11b013167a696777d5"
 
 [params]
 

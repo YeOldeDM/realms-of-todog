@@ -6,7 +6,11 @@ path="res://.import/zot_blue1.png-40e6cfe993e0341d19936525df6625b4.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/zot_blue1.png"
 source_md5="210952ea1e62a0e764d0ddd725f6479d"
+
+dest_files=[ "res://.import/zot_blue1.png-40e6cfe993e0341d19936525df6625b4.stex" ]
+dest_md5="2f62aa76e049f834063c92929a07d4b3"
 
 [params]
 

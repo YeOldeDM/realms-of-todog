@@ -6,7 +6,11 @@ path="res://.import/mesh0.png-013e889818a66084f1062c0c489f09a8.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/mesh0.png"
 source_md5="4bf73a8b1267326836b13ff979557a7f"
+
+dest_files=[ "res://.import/mesh0.png-013e889818a66084f1062c0c489f09a8.stex" ]
+dest_md5="49608cc3a43ca92211c7791c2935faff"
 
 [params]
 

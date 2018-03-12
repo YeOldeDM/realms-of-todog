@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://things/components/MonsterGear.gd" type="Script" id=1]
+
+[node name="MonsterGear" type="Node" index="0"]
+
+script = ExtResource( 1 )
+weapon_path = null
+min_damage = 1
+max_damage = 6
+accuracy = 0
+armor_class = 0
+
+

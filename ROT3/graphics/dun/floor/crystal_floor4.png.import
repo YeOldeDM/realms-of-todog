@@ -6,7 +6,11 @@ path="res://.import/crystal_floor4.png-bee08e592a1e1daaa6bfa4a4c6460e64.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/crystal_floor4.png"
 source_md5="6231b476fa1419ccec60d8a43a3fa30b"
+
+dest_files=[ "res://.import/crystal_floor4.png-bee08e592a1e1daaa6bfa4a4c6460e64.stex" ]
+dest_md5="1ce86aaf10f750430181db3d16c9b369"
 
 [params]
 

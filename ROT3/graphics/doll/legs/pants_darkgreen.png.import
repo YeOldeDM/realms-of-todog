@@ -6,7 +6,11 @@ path="res://.import/pants_darkgreen.png-6af08de50fa910810acfaec3db5b654a.stex"
 
 [deps]
 
+source_file="res://graphics/doll/legs/pants_darkgreen.png"
 source_md5="8f05495167d06bbaf8dfb09b3271cae9"
+
+dest_files=[ "res://.import/pants_darkgreen.png-6af08de50fa910810acfaec3db5b654a.stex" ]
+dest_md5="e34feb1b06e0a1cd39e581759bad27a9"
 
 [params]
 

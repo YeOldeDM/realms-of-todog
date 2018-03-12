@@ -6,7 +6,11 @@ path="res://.import/sandstone_wall7.png-34bb8f6db30a0e05931cb75ffc67c8a4.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/sandstone_wall7.png"
 source_md5="de0ab11a615aaf9acc9213071fbf2459"
+
+dest_files=[ "res://.import/sandstone_wall7.png-34bb8f6db30a0e05931cb75ffc67c8a4.stex" ]
+dest_md5="d0f29c154ec0a57f0342f73775803fe2"
 
 [params]
 

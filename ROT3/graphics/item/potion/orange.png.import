@@ -6,7 +6,11 @@ path="res://.import/orange.png-99989699adaf88250d0a3a61d3cb9efd.stex"
 
 [deps]
 
+source_file="res://graphics/item/potion/orange.png"
 source_md5="e2bb1e04ad35f4af4bbebe2251f6c32d"
+
+dest_files=[ "res://.import/orange.png-99989699adaf88250d0a3a61d3cb9efd.stex" ]
+dest_md5="f39e82a14f48300aeff654c26bd8fb7d"
 
 [params]
 

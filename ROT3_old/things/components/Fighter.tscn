@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://things/components/Fighter.gd" type="Script" id=1]
+[ext_resource path="res://graphics/misc/mdam-sheet.png" type="Texture" id=2]
+
+[node name="Fighter" type="Node2D"]
+
+script = ExtResource( 1 )
+HP = 10
+power = 2
+defense = 1
+base_min_damage = 0
+base_max_damage = 2
+invincible = false
+
+[node name="LifeBar" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+centered = false
+hframes = 7
+
+

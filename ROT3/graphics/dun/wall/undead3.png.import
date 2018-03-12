@@ -6,7 +6,11 @@ path="res://.import/undead3.png-a48f6b25d36d08d2bfc6826e269ed26a.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/undead3.png"
 source_md5="a25edcf9711837368900f7ec4e892f5b"
+
+dest_files=[ "res://.import/undead3.png-a48f6b25d36d08d2bfc6826e269ed26a.stex" ]
+dest_md5="4556b63a6de5eba6e7f4b5c47d0ec949"
 
 [params]
 

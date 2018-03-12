@@ -6,7 +6,11 @@ path="res://.import/wall_flesh5.png-05edc0745a208a45ab537a8a274d4c99.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/wall_flesh5.png"
 source_md5="4c4f5d709a65846eb671fdfabcdd0452"
+
+dest_files=[ "res://.import/wall_flesh5.png-05edc0745a208a45ab537a8a274d4c99.stex" ]
+dest_md5="3745502a81c1d14381ea9087b4a3bf7e"
 
 [params]
 

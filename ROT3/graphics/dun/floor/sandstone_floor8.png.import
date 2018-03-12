@@ -6,7 +6,11 @@ path="res://.import/sandstone_floor8.png-369138da858852d807c807eb504d0263.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/sandstone_floor8.png"
 source_md5="8e1b6928f86a87a47b11445f241a3869"
+
+dest_files=[ "res://.import/sandstone_floor8.png-369138da858852d807c807eb504d0263.stex" ]
+dest_md5="7e2b8e89bf1d049b300665d83a22e4ad"
 
 [params]
 

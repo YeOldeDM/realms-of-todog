@@ -6,7 +6,11 @@ path="res://.import/mdam-sheet.png-bc5ddcdbd31dac869a4bbddf117572d0.stex"
 
 [deps]
 
+source_file="res://graphics/misc/mdam-sheet.png"
 source_md5="a1cfdf7c7ca263d36164691e31e64d53"
+
+dest_files=[ "res://.import/mdam-sheet.png-bc5ddcdbd31dac869a4bbddf117572d0.stex" ]
+dest_md5="195d16ad54dd7c45082e1e5a04449822"
 
 [params]
 

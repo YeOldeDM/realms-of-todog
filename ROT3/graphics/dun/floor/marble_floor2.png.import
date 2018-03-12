@@ -6,7 +6,11 @@ path="res://.import/marble_floor2.png-32f5c7c5407089d8588cc7eeee0a6819.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/marble_floor2.png"
 source_md5="9a21fb01d51726b38e0002c61e09875e"
+
+dest_files=[ "res://.import/marble_floor2.png-32f5c7c5407089d8588cc7eeee0a6819.stex" ]
+dest_md5="8b32ceb18eb6068487b88e2ba781033b"
 
 [params]
 
