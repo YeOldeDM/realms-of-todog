@@ -6,7 +6,11 @@ path="res://.import/sam.png-f33876689e748d01a7868c206d675586.stex"
 
 [deps]
 
+source_file="res://graphics/doll/body/sam.png"
 source_md5="6ef471fd454cdfaf416bfc3e55a73b43"
+
+dest_files=[ "res://.import/sam.png-f33876689e748d01a7868c206d675586.stex" ]
+dest_md5="303b2ee807160a8eea565a662ddc4a8f"
 
 [params]
 

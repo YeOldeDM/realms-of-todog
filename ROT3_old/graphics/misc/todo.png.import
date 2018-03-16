@@ -6,7 +6,11 @@ path="res://.import/todo.png-5677ebbfc5e3eba1b3e9f8e3b73dfcbb.stex"
 
 [deps]
 
+source_file="res://graphics/misc/todo.png"
 source_md5="085e63d476d4d6135f1e9b457dcaaa14"
+
+dest_files=[ "res://.import/todo.png-5677ebbfc5e3eba1b3e9f8e3b73dfcbb.stex" ]
+dest_md5="952c7e3326ead21cdabf8a0e86f05c01"
 
 [params]
 

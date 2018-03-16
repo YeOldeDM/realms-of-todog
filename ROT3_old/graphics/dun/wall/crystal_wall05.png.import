@@ -6,7 +6,11 @@ path="res://.import/crystal_wall05.png-93ca5390d9f558652298c8f941c4c9bc.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/crystal_wall05.png"
 source_md5="37178a380a413b4629cfa2c3fd1feaa0"
+
+dest_files=[ "res://.import/crystal_wall05.png-93ca5390d9f558652298c8f941c4c9bc.stex" ]
+dest_md5="880a7716187eb48f2918666906044c2c"
 
 [params]
 

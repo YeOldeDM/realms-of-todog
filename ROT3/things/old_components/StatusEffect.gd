@@ -9,6 +9,8 @@ export(int) var duration = 120	#in seconds
 export(Texture) var brand_texture = null
 
 onready var life = 0
+var _dbpath
+var SID
 
 func _ready():
 	if Owner:

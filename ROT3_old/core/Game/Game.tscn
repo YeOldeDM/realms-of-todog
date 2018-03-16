@@ -1809,7 +1809,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 1.0
-margin_right = 426.0
+margin_right = 455.0
 margin_bottom = -4.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1845,7 +1845,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 410.0
+margin_right = 439.0
 margin_bottom = 29.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1870,7 +1870,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 33.0
-margin_right = 410.0
+margin_right = 439.0
 margin_bottom = 551.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = true
@@ -1883,7 +1883,7 @@ bbcode_text = "Movement:
 
 You may move one tile at a time in any of the eight directions.  These controls are bound to both the keypad (\"right-handed\") or left end of the keyboard (\"left-handed\")  
 
-[pic]  
+[img]res://graphics/misc/help/dirgraph2.png[/img] -or- [img]res://graphics/misc/help/dirgraph1.png[/img]
 
 
 
@@ -1923,7 +1923,7 @@ text = "Movement:
 
 You may move one tile at a time in any of the eight directions.  These controls are bound to both the keypad (\"right-handed\") or left end of the keyboard (\"left-handed\")  
 
-[pic]  
+ -or- 
 
 
 
@@ -1968,7 +1968,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 555.0
-margin_right = 410.0
+margin_right = 439.0
 margin_bottom = 572.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false

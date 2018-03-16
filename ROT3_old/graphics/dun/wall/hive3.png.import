@@ -6,7 +6,11 @@ path="res://.import/hive3.png-31bd4fdb8e3e77d0f7e7863570c61d4c.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/hive3.png"
 source_md5="df03a2628eb5d309f11324eb30c6553b"
+
+dest_files=[ "res://.import/hive3.png-31bd4fdb8e3e77d0f7e7863570c61d4c.stex" ]
+dest_md5="d47fad77f52814e0674d839bb621dd4a"
 
 [params]
 

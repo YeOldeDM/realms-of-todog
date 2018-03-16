@@ -6,7 +6,11 @@ path="res://.import/wall_yellow_rock1.png-53737a67ac47b19e04f08c35b8a424cb.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/wall_yellow_rock1.png"
 source_md5="6d5d68ef756d8c649a80168bcceac1a4"
+
+dest_files=[ "res://.import/wall_yellow_rock1.png-53737a67ac47b19e04f08c35b8a424cb.stex" ]
+dest_md5="240d4915892e75955ec45c509657a5ca"
 
 [params]
 

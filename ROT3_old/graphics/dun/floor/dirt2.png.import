@@ -6,7 +6,11 @@ path="res://.import/dirt2.png-ef08245937f8194273cb7441c3596ebf.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/dirt2.png"
 source_md5="f954f50444566b4df3ded780d9edf7cb"
+
+dest_files=[ "res://.import/dirt2.png-ef08245937f8194273cb7441c3596ebf.stex" ]
+dest_md5="b2d46d4969d002cfbd5ba7bb7903f3b9"
 
 [params]
 

@@ -9,6 +9,8 @@ export(int) var duration = 120	#in seconds
 export(Texture) var brand_texture = null
 
 onready var life = 0
+var _dbpath
+var SID
 
 func _ready():
 	if Owner:
@@ -18,7 +20,6 @@ func _ready():
 func _rpg_process(delta):
 	self.life += delta
 	if self.life > self.duration:
-		RPG.messageboard.message("%s is no longer %s!" % [Owner.get_message_name(), status_name])
 		self.queue_free()
 
 

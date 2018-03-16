@@ -6,7 +6,11 @@ path="res://.import/lair1.png-423332fa0138d021d1515b1cda2d7b8b.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/lair1.png"
 source_md5="94d7ab97cb493511f42cbac175a9e47f"
+
+dest_files=[ "res://.import/lair1.png-423332fa0138d021d1515b1cda2d7b8b.stex" ]
+dest_md5="5bec19c8099cfa5009a1d5a1af38c630"
 
 [params]
 

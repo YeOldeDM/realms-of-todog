@@ -6,7 +6,11 @@ path="res://.import/trouser_green.png-1fcf325e563af4f155b8d469a3e2322a.stex"
 
 [deps]
 
+source_file="res://graphics/doll/legs/trouser_green.png"
 source_md5="01413c984f8431e829b10c69122b9000"
+
+dest_files=[ "res://.import/trouser_green.png-1fcf325e563af4f155b8d469a3e2322a.stex" ]
+dest_md5="06aacc287ab69bf40a09c52807dfce8b"
 
 [params]
 

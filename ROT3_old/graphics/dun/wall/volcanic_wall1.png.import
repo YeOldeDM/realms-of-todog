@@ -6,7 +6,11 @@ path="res://.import/volcanic_wall1.png-0c76798a5856d84d5515ad95a2903a32.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/volcanic_wall1.png"
 source_md5="77080f737a1fdaeed6aa7dc4f4512a28"
+
+dest_files=[ "res://.import/volcanic_wall1.png-0c76798a5856d84d5515ad95a2903a32.stex" ]
+dest_md5="8058a2c2d0c8ed17a344ebf21b19d802"
 
 [params]
 

@@ -6,7 +6,11 @@ path="res://.import/volcanic_floor6.png-30c9e9f10f60e4f0ffdd3c4f3f5637ed.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/volcanic_floor6.png"
 source_md5="a79a81da53efb59d4a499049f40d82c3"
+
+dest_files=[ "res://.import/volcanic_floor6.png-30c9e9f10f60e4f0ffdd3c4f3f5637ed.stex" ]
+dest_md5="0b35ca3ae526aeb7379a7f63ef6cc899"
 
 [params]
 

@@ -6,7 +6,11 @@ path="res://.import/bog_green3.png-3e1b9b03d92b8418efefea4353ea8170.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/bog_green3.png"
 source_md5="e34f759cef42b4aba9210a6dce0267e5"
+
+dest_files=[ "res://.import/bog_green3.png-3e1b9b03d92b8418efefea4353ea8170.stex" ]
+dest_md5="5497db0cbdcfbf2993cbf3443d2350cc"
 
 [params]
 

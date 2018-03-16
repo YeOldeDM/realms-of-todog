@@ -43,6 +43,8 @@ class Room:
 
 
 
+func can_see_thing( thing ):
+	return thing.cell in fov_cells or (thing.found and thing.stay_visible)
 
 
 
@@ -79,6 +81,10 @@ func draw_map( data ):
 	var fog_rect = Rect2( 0, 0, data.map.size(), data.map[0].size() )
 	$FogMap.fill_rect( fog_rect )
 
+func find_path( from, to ):
+	return $Pathfinder.find_path( from, to )
+
+
 func make_paths( map ):
 	var cells = []
 	var bounds = Vector2( map.size(), map[0].size() )
@@ -90,30 +96,51 @@ func make_paths( map ):
 
 
 
-
-
-# Add an instanced Thing to the map at a cell position
-# Return OK if all is well, or return ERROR
-func add_thing( thing, where, start_found=false ):
+func draw_pawns():
+	get_tree().call_group("pawns", "queue_free")
 	
+	for thing in $Things.get_children():
+		if can_see_thing( thing ):
+			var pawn = preload("res://core/Map/ThingPawn.tscn").instance()
+			$Pawns.add_child(pawn)
+			pawn.map = self
+			pawn.init(thing)
+
+
+func add_thing( path, where, start_found=false ):
+	var thing = DATA.make_thing(path)
+	
+	$Things.add_child(thing)
+	thing.setup()
 	if start_found:
 		thing.found = true
-
-	add_child( thing )
-
+	
 	thing.cell = where
 	if thing.blocks_movement:
-		# Block this cell for pathfinding
-		$Pathfinder.dirty_cells[where]=false
-		thing.connect("map_cell_changed", self, "_on_blocker_map_cell_changed")
+		$Pathfinder.dirty_cells[where] = false
+		thing.connect( "cell_changed", self, "_on_blocker_cell_changed" )
+	
 	return thing
 
-func remove_thing( thing ):
-	if thing.blocks_movement:
-		$Pathfinder.dirty_cells[thing.cell]=true
-		thing.disconnect("map_cell_changed", self, "_on_blocker_map_cell_changed")
-	remove_child( thing )
-	return thing
+
+#	if start_found:
+#		thing.found = true
+#
+#	add_child( thing )
+#
+#	thing.cell = where
+#	if thing.blocks_movement:
+#		# Block this cell for pathfinding
+#		$Pathfinder.dirty_cells[where]=false
+#		thing.connect("map_cell_changed", self, "_on_blocker_map_cell_changed")
+#	return thing
+#
+#func remove_thing( thing ):
+#	if thing.blocks_movement:
+#		$Pathfinder.dirty_cells[thing.cell]=true
+#		thing.disconnect("map_cell_changed", self, "_on_blocker_map_cell_changed")
+#	remove_child( thing )
+#	return thing
 
 
 
@@ -203,25 +230,25 @@ func find_empty_cells_at( where ):
 
 func spawn_player( where ):
 	# Spawn Player
-	var obj = add_thing( RPG.spawn("Hero/Godot"), where )
-	if typeof( obj ) == TYPE_INT:
-		OS.alert("Failed to load the HERO THING. This is really bad!!")
-		return
-
-	# obj component init
-	obj.components.player.enter_map( self )
+	var obj = add_thing( "Misc/Player", where )
 	
+	
+	# obj component init
+#	obj.components.player.enter_map( self )
+	obj.connect("cell_changed", self, "_on_player_cell_changed")
+	obj.connect("acted", self, "_on_player_acted")
 	#connect player to HUD
 	var hud = $"/root/Game/Frame/Char"
-	obj.components.fighter.connect( "HP_changed", hud, "_on_HP_changed" )
-	obj.components.fighter.connect( "maxHP_changed", hud, "_on_maxHP_changed" )
+	obj.fighter.connect( "hp_changed", hud, "_on_hp_changed" )
+	obj.fighter.connect( "current_hp_changed", hud, "_on_current_hp_changed" )
 	#Kickstart HUD
-	obj.components.fighter.emit_signal("maxHP_changed", obj.components.fighter.HP)
-	obj.components.fighter.emit_signal("HP_changed", obj.components.fighter.HP)
+	obj.fighter.emit_signal("hp_changed", obj.fighter.hp)
+	obj.fighter.emit_signal("current_hp_changed", obj.fighter.current_hp)
 	
 	# Kickstart FOV
-	_on_player_map_cell_changed( where, where )
-
+	print("Spawned Player at %s" % str(where))
+	_on_player_cell_changed( where, where )
+	
 
 
 
@@ -293,7 +320,7 @@ func populate_room( room ):
 			
 			var choice = choices[randi() % choices.size()]
 			
-			add_thing( RPG.spawn( choice ), pos )
+			add_thing( "Misc/Hog", pos )
 
 
 
@@ -306,6 +333,7 @@ func populate_rooms( rooms ):
 
 
 func _ready():
+	RPG.map = self
 	get_parent().map = self
 	# Don't initiate the map until everyone is ready!
 	call_deferred("go")
@@ -322,7 +350,7 @@ func go():
 	populate_rooms( data.rooms )
 	# Always spawn the player last!
 	spawn_player( Vector2( data.start_x, data.start_y ) )
-
+	draw_pawns()
 
 
 
@@ -332,7 +360,7 @@ func go():
 
 
 # Callback to Notify Pathfinder node when blocking Things change cells
-func _on_blocker_map_cell_changed( from, to ):
+func _on_blocker_cell_changed( from, to ):
 	#Unblock previous cell
 	if typeof(from) == TYPE_VECTOR2:
 		$Pathfinder.dirty_cells[from]=true
@@ -344,7 +372,10 @@ func _on_blocker_map_cell_changed( from, to ):
 var fov_cells = PoolVector2Array()
 # Special callback when Player Thing changes cells
 # Updates Fog and vision, finds unfound Things, and wakes sleeping AIs
-func _on_player_map_cell_changed( from, to ):
+func _on_player_cell_changed( from, to ):
+	$Camera.position = map_to_world(to)
+#	print("we moved to %s" % str(to) )
+	
 	var blocks = []
 	for thing in get_sightblockers():
 		blocks.append( thing.cell )
@@ -356,25 +387,28 @@ func _on_player_map_cell_changed( from, to ):
 		if thing.cell in fov_cells:
 			if !thing.found:
 				thing.found = true
-			if "AI" in thing.components:
-				if !thing.components.AI.awake:
-					thing.components.AI.wake_up( RPG.player )
-		thing.visible = thing.cell in fov_cells or (thing.found and thing.stay_visible)
-
+				print("found")
+			if thing.ai:
+				if !thing.ai.awake:
+					thing.ai.wake_up( RPG.player )
+#		thing.visible = thing.cell in fov_cells or (thing.found and thing.stay_visible)
 
 # Main gameplay loop!
 # Called after Player performs an action
 # All other actors act in turn before Player can act again
 func _on_player_acted(delta):
+	print("player acted!")
 	for actor in get_actors():
-		if "AI" in actor.components and actor != RPG.player:
-#			actor.components.AI.act()
-			actor.emit_signal("about_to_act", delta)
+		if actor != RPG.player:
+			if actor.ai and actor.ai.awake:
+				actor.emit_signal("about_to_act", delta)
+
 
 	for thing in get_fx():
 		thing.components.FX.life -= 1
 	# Add 5 sec to game time
 	get_parent().game_time += delta
+	draw_pawns()
 
 
 

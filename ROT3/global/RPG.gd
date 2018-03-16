@@ -60,12 +60,12 @@ const TILE_FAMILY = {
 const THING_PATH = "res://things/db/"
 
 const ABBREV = {
-	"male":		"M",
-	"female":	"F",
+	"Male":		"M",
+	"Female":	"F",
 	
-	"godot":	"Gd",
+	"Godot":	"Gd",
 	
-	"waitor":	"Wa",
+	"Waitor":	"Wa",
 	}
 
 const DIRECTIONS = {
@@ -80,20 +80,21 @@ const DIRECTIONS = {
     }
 
 var game
+var map
 var player
 
 var player_data = {
 	"name":		"Vladimir",
-	"sex":		"male",
-	"race":		"godot",
-	"job":	"waitor",
-	"XP":	0,
+	"sex":		"Male",
+	"race":		"Godot",
+	"job":		"Waitor",
+	"XP":		0,
 	}
 
 var messageboard
 
 
-onready var database = preload("res://database/Database.tscn").instance()
+#onready var database = preload("res://database/Database.tscn").instance()
 
 func save_game():
 	var file = File.new()
@@ -107,13 +108,13 @@ func save_game():
 	
 
 var _SID = 0
-func spawn( what ):
-	var thing = database.get_thing( what )
-	
-	thing.SID = _SID
-	_SID += 1
-	
-	return thing
+#func spawn( what ):
+#	var thing = database.get_thing( what )
+#
+#	thing.SID = _SID
+#	_SID += 1
+#
+#	return thing
 
 
 func get_random_tile_family_pair():

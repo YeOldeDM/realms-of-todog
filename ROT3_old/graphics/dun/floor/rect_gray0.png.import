@@ -6,7 +6,11 @@ path="res://.import/rect_gray0.png-253f4b5e638da9965c3f38ca0f27ce18.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/rect_gray0.png"
 source_md5="9a1351a8ded81a12c6a09e9cf4ca81b3"
+
+dest_files=[ "res://.import/rect_gray0.png-253f4b5e638da9965c3f38ca0f27ce18.stex" ]
+dest_md5="01c2677a38b9e591e57cff099079f53d"
 
 [params]
 

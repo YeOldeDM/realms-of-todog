@@ -6,7 +6,11 @@ path="res://.import/floor_sand_stone3.png-ae10e0570813abedaf2437be63b85a74.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/floor_sand_stone3.png"
 source_md5="510a01fd6f4b641adca5ec2b33009bb4"
+
+dest_files=[ "res://.import/floor_sand_stone3.png-ae10e0570813abedaf2437be63b85a74.stex" ]
+dest_md5="ac48a1636379ae486c0990adac961395"
 
 [params]
 

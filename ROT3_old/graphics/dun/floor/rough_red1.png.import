@@ -6,7 +6,11 @@ path="res://.import/rough_red1.png-238a1bac83b2e234264894b85fd43755.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/rough_red1.png"
 source_md5="49ae9bcf191a91f29e445f9f20624744"
+
+dest_files=[ "res://.import/rough_red1.png-238a1bac83b2e234264894b85fd43755.stex" ]
+dest_md5="2719f356b798c047a266f41b84d4afc8"
 
 [params]
 

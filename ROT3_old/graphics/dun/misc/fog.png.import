@@ -6,7 +6,11 @@ path="res://.import/fog.png-6db466adf2e019a9086c0ab4215df2d3.stex"
 
 [deps]
 
+source_file="res://graphics/dun/misc/fog.png"
 source_md5="a619c73b14198a0cc384a9dd87e2a923"
+
+dest_files=[ "res://.import/fog.png-6db466adf2e019a9086c0ab4215df2d3.stex" ]
+dest_md5="66e105636faf545e87eb193a1e057d1a"
 
 [params]
 

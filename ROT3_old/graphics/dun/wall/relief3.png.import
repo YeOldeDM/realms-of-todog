@@ -6,7 +6,11 @@ path="res://.import/relief3.png-b68616a65a02a2bd98a370ea1f3a0937.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/relief3.png"
 source_md5="a5a203e222013008476bbb114fd6689f"
+
+dest_files=[ "res://.import/relief3.png-b68616a65a02a2bd98a370ea1f3a0937.stex" ]
+dest_md5="f4b1667eb5c1f061b3d46c088749d17b"
 
 [params]
 

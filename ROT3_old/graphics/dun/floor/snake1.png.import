@@ -6,7 +6,11 @@ path="res://.import/snake1.png-52b50fd1aa5837a9a71cbb9b45715df9.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/snake1.png"
 source_md5="78920fac1492cbbed03361131f1fb1cc"
+
+dest_files=[ "res://.import/snake1.png-52b50fd1aa5837a9a71cbb9b45715df9.stex" ]
+dest_md5="3d6c612c81e4bebc1a55894032c5f419"
 
 [params]
 

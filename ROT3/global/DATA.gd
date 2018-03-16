@@ -7,7 +7,7 @@ extends Node
 const VERSION = {
 		"MAJOR":	0,
 		"MINOR":	0,
-		"BABY":		41
+		"BABY":		42
 		}
 
 
@@ -34,3 +34,9 @@ enum RACE {
 
 
 const DEFAULT_ACTION_TIME = 5.0	# Fallback delta value for an action
+
+
+
+func make_thing( path ):
+	if $Things.has_node( path ):
+		return $Things.get_node(path).duplicate()

@@ -6,7 +6,11 @@ path="res://.import/brick_brown3.png-005a9eb9dd206756fe9a53dc540ab8a3.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/brick_brown3.png"
 source_md5="8169c5a032ff1615c1ed75cfcdd2dab6"
+
+dest_files=[ "res://.import/brick_brown3.png-005a9eb9dd206756fe9a53dc540ab8a3.stex" ]
+dest_md5="55152a252c8d434e66ac57e877eac618"
 
 [params]
 

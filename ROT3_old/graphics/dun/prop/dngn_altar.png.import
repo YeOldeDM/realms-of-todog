@@ -6,7 +6,11 @@ path="res://.import/dngn_altar.png-9fee3a05b63a87cf23a7d197eeec5e63.stex"
 
 [deps]
 
+source_file="res://graphics/dun/prop/dngn_altar.png"
 source_md5="c4a1c4de09a69768e1c99f03750d8d78"
+
+dest_files=[ "res://.import/dngn_altar.png-9fee3a05b63a87cf23a7d197eeec5e63.stex" ]
+dest_md5="61763375052210341f5a83459591af5e"
 
 [params]
 

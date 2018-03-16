@@ -6,7 +6,11 @@ path="res://.import/ice0.png-f5c1bb7421c84ffed770451e85a23782.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/ice0.png"
 source_md5="bee9a8e63d13e443cebee01945575ae5"
+
+dest_files=[ "res://.import/ice0.png-f5c1bb7421c84ffed770451e85a23782.stex" ]
+dest_md5="796bd2fb2d7dc8dd04a6781f7f352c32"
 
 [params]
 

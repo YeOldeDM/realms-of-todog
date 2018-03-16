@@ -6,7 +6,11 @@ path="res://.import/tomb0.png-96c7a6076fb5b10ca223fd0eb6d9f805.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/tomb0.png"
 source_md5="87416ea70151199d7a051ca986d1573a"
+
+dest_files=[ "res://.import/tomb0.png-96c7a6076fb5b10ca223fd0eb6d9f805.stex" ]
+dest_md5="b6f9b55ebafd61a452c693368cc4a57b"
 
 [params]
 

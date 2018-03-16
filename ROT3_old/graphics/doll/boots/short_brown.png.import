@@ -6,7 +6,11 @@ path="res://.import/short_brown.png-0b4b80ad577f9fa64ac97fa3592a52ac.stex"
 
 [deps]
 
+source_file="res://graphics/doll/boots/short_brown.png"
 source_md5="845dc811936ec98484484e2f36c180d4"
+
+dest_files=[ "res://.import/short_brown.png-0b4b80ad577f9fa64ac97fa3592a52ac.stex" ]
+dest_md5="3c7208e38a54e9301753e081203b249e"
 
 [params]
 

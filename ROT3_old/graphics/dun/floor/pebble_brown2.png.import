@@ -6,7 +6,11 @@ path="res://.import/pebble_brown2.png-7f41e00671228f5aafaaa11c2e006e86.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/pebble_brown2.png"
 source_md5="0fe0fb9926770600713e87c5297a0b21"
+
+dest_files=[ "res://.import/pebble_brown2.png-7f41e00671228f5aafaaa11c2e006e86.stex" ]
+dest_md5="57bbb74dc5ac997c2e637fc18bbf974e"
 
 [params]
 

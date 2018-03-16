@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://global/DATA.gd" type="Script" id=1]
 [ext_resource path="res://global/SpeciesData.gd" type="Script" id=2]
@@ -36,6 +36,12 @@
 [ext_resource path="res://graphics/player/base/troll_f.png" type="Texture" id=34]
 [ext_resource path="res://global/JobData.gd" type="Script" id=35]
 [ext_resource path="res://global/JobGearData.gd" type="Script" id=36]
+[ext_resource path="res://components/Thing/Thing.tscn" type="PackedScene" id=37]
+[ext_resource path="res://mycon.png" type="Texture" id=38]
+[ext_resource path="res://components/Fighter/Fighter.tscn" type="PackedScene" id=39]
+[ext_resource path="res://components/Player/Player.tscn" type="PackedScene" id=40]
+[ext_resource path="res://graphics/mon/hog.png" type="Texture" id=41]
+[ext_resource path="res://components/AI/AI.tscn" type="PackedScene" id=42]
 
 [node name="DATA" type="Node" index="0"]
 
@@ -335,6 +341,8 @@ female_sprite = ExtResource( 34 )
 
 [node name="Jobs" type="Node" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="JobData" type="Node" parent="Jobs" index="0"]
 
 script = ExtResource( 35 )
@@ -356,5 +364,34 @@ quantity = 1
 option_group = ""
 
 [node name="Perks" type="Node" parent="Jobs/JobData" index="1"]
+
+[node name="Things" type="Node" parent="." index="2"]
+
+[node name="Misc" type="Node" parent="Things" index="0"]
+
+[node name="Player" parent="Things/Misc" index="0" instance=ExtResource( 37 )]
+
+thing_name = "Brogan"
+default_pawn_texture = ExtResource( 38 )
+blocks_movement = true
+stay_visible = true
+
+[node name="Fighter" parent="Things/Misc/Player" index="0" instance=ExtResource( 39 )]
+
+move_speed = 1.0
+
+[node name="Player" parent="Things/Misc/Player" index="1" instance=ExtResource( 40 )]
+
+[node name="Hog" parent="Things/Misc" index="1" instance=ExtResource( 37 )]
+
+thing_name = "Hog"
+default_pawn_texture = ExtResource( 41 )
+blocks_movement = true
+
+[node name="Fighter" parent="Things/Misc/Hog" index="0" instance=ExtResource( 39 )]
+
+move_speed = 1.0
+
+[node name="AI" parent="Things/Misc/Hog" index="1" instance=ExtResource( 42 )]
 
 

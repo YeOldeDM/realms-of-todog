@@ -42,7 +42,7 @@ func ConfuseTarget():
 			for thing in targets:
 				if "AI" in thing.components:
 					RPG.messageboard.message( "%s has become confused!" % thing.get_message_name() )
-					thing.components.AI.confuse()
+#					thing.add_status_effect("Confused")
 					emit_signal("executed", true)
 					return true
 	emit_signal("executed", false)

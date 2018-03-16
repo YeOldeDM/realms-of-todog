@@ -86,6 +86,14 @@ func kill():
 		emit_signal("map_cell_changed", self.cell, null)
 	queue_free()
 
+#func add_status_effect( name ):
+#	if !Engine.editor_hint:
+#		if name in self.status_effects:
+#			return
+#		var stat = get_node("/root/RPG").spawn("StatusEffect/"+name)
+#		if stat:
+#			add_child(stat)
+#			self.status_effects[name] = stat
 
 func _rpg_process(delta=5.0):
 	for status in self.status_effects.values():

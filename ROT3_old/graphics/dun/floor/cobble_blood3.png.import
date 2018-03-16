@@ -6,7 +6,11 @@ path="res://.import/cobble_blood3.png-6920d2e2455dbc32b68cc6ce3f944a4e.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/cobble_blood3.png"
 source_md5="0506e3fcd5277ccfc2efec691947444c"
+
+dest_files=[ "res://.import/cobble_blood3.png-6920d2e2455dbc32b68cc6ce3f944a4e.stex" ]
+dest_md5="65bac8ebdfb431c68d986838ca2bd34e"
 
 [params]
 

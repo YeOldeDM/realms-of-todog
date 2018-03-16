@@ -6,7 +6,11 @@ path="res://.import/lava1.png-a1a3007ca95007aba6f6ecc0507f0ae3.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/lava1.png"
 source_md5="2d154875a7b5d09d70d3ae60241edff1"
+
+dest_files=[ "res://.import/lava1.png-a1a3007ca95007aba6f6ecc0507f0ae3.stex" ]
+dest_md5="1735d8969f6ed4b206b976faa8574243"
 
 [params]
 

@@ -6,7 +6,11 @@ path="res://.import/human.png-a9e4901da45b83ef1338a1aa5f506a8e.stex"
 
 [deps]
 
+source_file="res://graphics/mon/human.png"
 source_md5="08207bf54ee60deb72926d5ffe557e57"
+
+dest_files=[ "res://.import/human.png-a9e4901da45b83ef1338a1aa5f506a8e.stex" ]
+dest_md5="6846535bd9bd9fe61af9aafcc70cae0c"
 
 [params]
 

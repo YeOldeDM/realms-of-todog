@@ -6,7 +6,11 @@ path="res://.import/boring_beetle.png-9b5bb10205b9e8204ee183384d30980e.stex"
 
 [deps]
 
+source_file="res://graphics/mon/boring_beetle.png"
 source_md5="14db342b553eb9fe5e2139399de147e9"
+
+dest_files=[ "res://.import/boring_beetle.png-9b5bb10205b9e8204ee183384d30980e.stex" ]
+dest_md5="093da2cd7f524a8cd207a817a51a6104"
 
 [params]
 

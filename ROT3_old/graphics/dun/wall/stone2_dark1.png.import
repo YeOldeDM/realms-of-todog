@@ -6,7 +6,11 @@ path="res://.import/stone2_dark1.png-b78d5604162c27ef11d7b4eb817f2c4c.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/stone2_dark1.png"
 source_md5="e517f901bcc788da21bd86860a77c814"
+
+dest_files=[ "res://.import/stone2_dark1.png-b78d5604162c27ef11d7b4eb817f2c4c.stex" ]
+dest_md5="d33dd59425b0f0329558630b0ca98b8e"
 
 [params]
 

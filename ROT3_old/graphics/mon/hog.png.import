@@ -6,7 +6,11 @@ path="res://.import/hog.png-83c8001925c107f122dd126f4ea1f902.stex"
 
 [deps]
 
+source_file="res://graphics/mon/hog.png"
 source_md5="45d0a8b09fd14c0c492b2a9b263c2108"
+
+dest_files=[ "res://.import/hog.png-83c8001925c107f122dd126f4ea1f902.stex" ]
+dest_md5="533a15006489324c34986fc90796e4f6"
 
 [params]
 

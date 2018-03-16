@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/Thing/Thing.gd" type="Script" id=1]
+[ext_resource path="res://graphics/misc/todo.png" type="Texture" id=2]
+
+[node name="Thing" type="Node" index="0"]
+
+script = ExtResource( 1 )
+description = "It's a thing."
+default_pawn_texture = ExtResource( 2 )
+blocks_movement = false
+blocks_sight = false
+stay_visible = false
+
+

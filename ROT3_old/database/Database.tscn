@@ -48,7 +48,6 @@ script = ExtResource( 1 )
 [node name="GiantRat" parent="Monster" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 464, 0 )
-sprite_path = null
 
 [node name="Fighter" parent="Monster/GiantRat" index="1" instance=ExtResource( 3 )]
 
@@ -63,11 +62,12 @@ base_max_damage = 5
 
 [node name="AI" parent="Monster/GiantRat" index="2" instance=ExtResource( 4 )]
 
+default_mode = null
+
 [node name="GiantBat" parent="Monster" index="1" instance=ExtResource( 2 )]
 
 editor/display_folded = true
 position = Vector2( 464, 32 )
-sprite_path = null
 
 [node name="Fighter" parent="Monster/GiantBat" index="1" instance=ExtResource( 3 )]
 
@@ -82,11 +82,11 @@ base_max_damage = 3
 
 [node name="AI" parent="Monster/GiantBat" index="2" instance=ExtResource( 4 )]
 
+default_mode = null
+
 [node name="Goblin" parent="Monster" index="2" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 464, 64 )
-sprite_path = null
 
 [node name="Fighter" parent="Monster/Goblin" index="1" instance=ExtResource( 3 )]
 
@@ -105,11 +105,12 @@ weapon_path = NodePath("../../../../Equipment/Weapon/Dagger")
 
 [node name="AI" parent="Monster/Goblin" index="2" instance=ExtResource( 4 )]
 
+default_mode = null
+
 [node name="GreenSnake" parent="Monster" index="3" instance=ExtResource( 2 )]
 
 editor/display_folded = true
 position = Vector2( 464, 96 )
-sprite_path = null
 
 [node name="Fighter" parent="Monster/GreenSnake" index="1" instance=ExtResource( 3 )]
 
@@ -124,11 +125,11 @@ base_max_damage = 8
 
 [node name="AI" parent="Monster/GreenSnake" index="2" instance=ExtResource( 4 )]
 
+default_mode = null
+
 [node name="Hog" parent="Monster" index="4" instance=ExtResource( 2 )]
 
-editor/display_folded = true
 position = Vector2( 464, 128 )
-sprite_path = null
 
 [node name="Fighter" parent="Monster/Hog" index="1" instance=ExtResource( 3 )]
 
@@ -143,6 +144,8 @@ base_max_damage = 1
 
 [node name="AI" parent="Monster/Hog" index="2" instance=ExtResource( 4 )]
 
+default_mode = 1
+
 [node name="Item" type="Node" parent="." index="1"]
 
 [node name="Potion" type="Node" parent="Item" index="0"]
@@ -150,7 +153,6 @@ base_max_damage = 1
 [node name="HealingPotion" parent="Item/Potion" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 32 )
-sprite_path = null
 
 [node name="Item" parent="Item/Potion/HealingPotion" index="1" instance=ExtResource( 6 )]
 
@@ -168,7 +170,6 @@ editor/display_folded = true
 
 editor/display_folded = true
 position = Vector2( 0, 64 )
-sprite_path = null
 
 [node name="Item" parent="Item/Wand/ConfusionWand" index="1" instance=ExtResource( 6 )]
 
@@ -182,7 +183,6 @@ brand_sprite = ExtResource( 8 )
 
 editor/display_folded = true
 position = Vector2( 16, 64 )
-sprite_path = null
 
 [node name="Item" parent="Item/Wand/PiggieWand" index="1" instance=ExtResource( 6 )]
 
@@ -200,7 +200,6 @@ editor/display_folded = true
 
 editor/display_folded = true
 position = Vector2( 0, 96 )
-sprite_path = null
 
 [node name="Item" parent="Item/Scroll/FireballScroll" index="1" instance=ExtResource( 6 )]
 
@@ -216,7 +215,6 @@ brand_sprite = ExtResource( 10 )
 
 editor/display_folded = true
 position = Vector2( 16, 96 )
-sprite_path = null
 
 [node name="Item" parent="Item/Scroll/UselessnessScroll" index="1" instance=ExtResource( 6 )]
 
@@ -233,7 +231,6 @@ brand_sprite = ExtResource( 11 )
 [node name="Apple" parent="Item/Food" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 128 )
-sprite_path = null
 
 [node name="Item" parent="Item/Food/Apple" index="1" instance=ExtResource( 6 )]
 
@@ -252,7 +249,6 @@ editor/display_folded = true
 
 editor/display_folded = true
 position = Vector2( 48, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Club" index="1" instance=ExtResource( 6 )]
 
@@ -270,7 +266,6 @@ accuracy = 1
 
 editor/display_folded = true
 position = Vector2( 80, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Dagger" index="1" instance=ExtResource( 6 )]
 
@@ -288,7 +283,6 @@ accuracy = 2
 
 editor/display_folded = true
 position = Vector2( 80, 192 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/ElvenDagger" index="1" instance=ExtResource( 6 )]
 
@@ -306,7 +300,6 @@ accuracy = 4
 
 editor/display_folded = true
 position = Vector2( 80, 176 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/OrcishDagger" index="1" instance=ExtResource( 6 )]
 
@@ -324,7 +317,6 @@ accuracy = 1
 
 editor/display_folded = true
 position = Vector2( 112, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Shortsword" index="1" instance=ExtResource( 6 )]
 
@@ -342,7 +334,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 112, 192 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/ElvenShortsword" index="1" instance=ExtResource( 6 )]
 
@@ -360,7 +351,6 @@ accuracy = 1
 
 editor/display_folded = true
 position = Vector2( 112, 176 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/OrcishShortsword" index="1" instance=ExtResource( 6 )]
 
@@ -378,7 +368,6 @@ accuracy = -1
 
 editor/display_folded = true
 position = Vector2( 144, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Mace" index="1" instance=ExtResource( 6 )]
 
@@ -396,7 +385,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 176, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Hand Axe" index="1" instance=ExtResource( 6 )]
 
@@ -414,7 +402,6 @@ accuracy = -1
 
 editor/display_folded = true
 position = Vector2( 208, 208 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Quarterstaff" index="1" instance=ExtResource( 6 )]
 
@@ -433,7 +420,6 @@ accuracy = 2
 
 editor/display_folded = true
 position = Vector2( 208, 192 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/Spear" index="1" instance=ExtResource( 6 )]
 
@@ -451,7 +437,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 208, 176 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Weapon/ElvenSpear" index="1" instance=ExtResource( 6 )]
 
@@ -471,7 +456,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 32, 320 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Body/Robes" index="1" instance=ExtResource( 6 )]
 
@@ -488,7 +472,6 @@ armor_class = 1
 
 editor/display_folded = true
 position = Vector2( 48, 320 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Body/LeatherJerkin" index="1" instance=ExtResource( 6 )]
 
@@ -506,7 +489,6 @@ armor_class = 4
 
 editor/display_folded = true
 position = Vector2( 64, 320 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Body/LeatherArmor" index="1" instance=ExtResource( 6 )]
 
@@ -523,7 +505,6 @@ armor_class = 6
 [node name="ElvenLeather" parent="Equipment/Body" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( 80, 320 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Body/ElvenLeather" index="1" instance=ExtResource( 6 )]
 
@@ -541,7 +522,6 @@ armor_class = 5
 
 editor/display_folded = true
 position = Vector2( 96, 320 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Body/OrcishLeather" index="1" instance=ExtResource( 6 )]
 
@@ -562,7 +542,6 @@ editor/display_folded = true
 [node name="RoundShield" parent="Equipment/Shield" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 48, 256 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Shield/RoundShield" index="1" instance=ExtResource( 6 )]
 
@@ -579,7 +558,6 @@ armor_class = 3
 
 editor/display_folded = true
 position = Vector2( 16, 256 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Shield/Buckler1" index="1" instance=ExtResource( 6 )]
 
@@ -596,7 +574,6 @@ armor_class = 2
 
 editor/display_folded = true
 position = Vector2( 0, 256 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Shield/Buckler2" index="1" instance=ExtResource( 6 )]
 
@@ -613,7 +590,6 @@ armor_class = 2
 
 editor/display_folded = true
 position = Vector2( -16, 256 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Shield/Buckler3" index="1" instance=ExtResource( 6 )]
 
@@ -632,7 +608,6 @@ armor_class = 2
 
 editor/display_folded = true
 position = Vector2( 48, 352 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Legs/Loincloth" index="1" instance=ExtResource( 6 )]
 
@@ -648,7 +623,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 64, 352 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Legs/Pants" index="1" instance=ExtResource( 6 )]
 
@@ -664,7 +638,6 @@ accuracy = 0
 
 editor/display_folded = true
 position = Vector2( 80, 352 )
-sprite_path = null
 
 [node name="Item" parent="Equipment/Legs/Trousers" index="1" instance=ExtResource( 6 )]
 
@@ -684,7 +657,6 @@ editor/display_folded = true
 
 editor/display_folded = true
 position = Vector2( 272, 112 )
-sprite_path = null
 
 [node name="Paperdoll" parent="Hero/Godot" index="1" instance=ExtResource( 34 )]
 
@@ -737,7 +709,6 @@ editor_draw_drag_margin = false
 [node name="Fireball" parent="FX" index="0" instance=ExtResource( 2 )]
 
 editor/display_folded = true
-sprite_path = null
 
 [node name="FX" parent="FX/Fireball" index="1" instance=ExtResource( 37 )]
 

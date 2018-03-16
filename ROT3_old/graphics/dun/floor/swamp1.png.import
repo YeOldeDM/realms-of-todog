@@ -6,7 +6,11 @@ path="res://.import/swamp1.png-f3ae737f218bd5a791fd862959e9a20f.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/swamp1.png"
 source_md5="b2245949a4acbe88396722d0645f8b6b"
+
+dest_files=[ "res://.import/swamp1.png-f3ae737f218bd5a791fd862959e9a20f.stex" ]
+dest_md5="c9112bf79aef1153bfa7d772fc09fdaa"
 
 [params]
 

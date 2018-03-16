@@ -24,7 +24,12 @@ onready var Owner = get_parent()
 var awake = false
 var target = null
 
+export(int,"STOP","WANDER","ADVANCE","CHASE") var default_mode = MODE_CHASE
 
+var ai_mode = MODE_STOP
+
+var old_ai_mode = MODE_CHASE			# AI mode to revert to when temp AI ends
+var temp_ai_time = 0	# temporary AI counter, in seconds
 
 
 func step( direction, attack_collider=true, avoid_walls=true, force_action=false):
@@ -80,10 +85,14 @@ func get_save_dict():
 func wake_up( by_who ):
 	self.awake = true
 	self.target = by_who
+	self.ai_mode = MODE_CHASE
 
 
-
-
+func confuse( length=60 ):
+	self.old_ai_mode = self.ai_mode
+	self.ai_mode = MODE_CONFUSED
+	temp_ai_time = length
+	RPG.messageboard.message("%s looks confused." % Owner.get_message_name() )
 
 
 func act_chase():
@@ -122,25 +131,26 @@ func act( step=5 ):
 		prints( Owner.get_message_name(), " is dead and cant act" )
 		return
 	
-
+	if self.temp_ai_time > 0:
+		self.temp_ai_time -= step
+	elif self.ai_mode != self.old_ai_mode:
+		self.temp_ai_time = 0
+		self.ai_mode = self.old_ai_mode
+		RPG.messageboard.message("%s returns to normal." % Owner.get_message_name() )
 	
 
 	if self.awake:
-		if "Confused" in Owner.status_effects:
-			act_wander(true)
-		else:
-			act_chase()
-#		match self.ai_mode:
-#			MODE_STOP:
-#				return
-#			MODE_WANDER:
-#				act_wander()
-#			MODE_CONFUSED:
-#				act_wander(true)
-#			MODE_ADVANCE:
-#				act_chase()
-#			MODE_CHASE:
-#				act_chase()
+		match self.ai_mode:
+			MODE_STOP:
+				return
+			MODE_WANDER:
+				act_wander()
+			MODE_CONFUSED:
+				act_wander(true)
+			MODE_ADVANCE:
+				act_chase()
+			MODE_CHASE:
+				act_chase()
 	
 
 

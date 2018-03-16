@@ -6,7 +6,11 @@ path="res://.import/goblin.png-614ab38fefc52a3bdaad91a66d6ac9ba.stex"
 
 [deps]
 
+source_file="res://graphics/mon/goblin.png"
 source_md5="91a174b6e534818fa83d16d27bed1fa4"
+
+dest_files=[ "res://.import/goblin.png-614ab38fefc52a3bdaad91a66d6ac9ba.stex" ]
+dest_md5="79128b754702f6a95e398114155f7ba3"
 
 [params]
 

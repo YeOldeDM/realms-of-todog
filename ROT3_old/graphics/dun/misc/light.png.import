@@ -6,7 +6,11 @@ path="res://.import/light.png-51a6d408d090e98acd299af90295d176.stex"
 
 [deps]
 
+source_file="res://graphics/dun/misc/light.png"
 source_md5="e50ce449f5ee0cc06b9ed87fe2ca1649"
+
+dest_files=[ "res://.import/light.png-51a6d408d090e98acd299af90295d176.stex" ]
+dest_md5="28a7976c58a855bcb0b8c14eb01292bc"
 
 [params]
 

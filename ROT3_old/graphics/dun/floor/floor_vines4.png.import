@@ -6,7 +6,11 @@ path="res://.import/floor_vines4.png-9d6536e39223ce5da8a68585e6bc4cad.stex"
 
 [deps]
 
+source_file="res://graphics/dun/floor/floor_vines4.png"
 source_md5="3185a9512aca0309fb79b759eb64fb1b"
+
+dest_files=[ "res://.import/floor_vines4.png-9d6536e39223ce5da8a68585e6bc4cad.stex" ]
+dest_md5="62c30e091ee5bbdb73a6c2757ccf9410"
 
 [params]
 

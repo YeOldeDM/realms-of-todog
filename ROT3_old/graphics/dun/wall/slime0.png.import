@@ -6,7 +6,11 @@ path="res://.import/slime0.png-94be44953a5efcab2e748ae7fffa4a12.stex"
 
 [deps]
 
+source_file="res://graphics/dun/wall/slime0.png"
 source_md5="f37419b3b0143dad3fd14dd8f90ab177"
+
+dest_files=[ "res://.import/slime0.png-94be44953a5efcab2e748ae7fffa4a12.stex" ]
+dest_md5="25a974bf1b0a18bf5c5a2857952c1a9a"
 
 [params]
 

@@ -8,7 +8,7 @@ func _ready():
 	var root = tree.create_item(tree)
 	root.set_text(0, "Things")
 	
-	populate_tree( root, RPG.database.get_children() )
+#	populate_tree( root, RPG.database.get_children() )
 
 
 func populate_tree( parent, data ):
