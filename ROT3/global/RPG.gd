@@ -57,7 +57,7 @@ const TILE_FAMILY = {
 		}
 	}
 
-const THING_PATH = "res://things/db/"
+#const THING_PATH = "res://things/db/"
 
 const ABBREV = {
 	"Male":		"M",
@@ -107,7 +107,7 @@ func save_game():
 	file.close()
 	
 
-var _SID = 0
+#var _SID = 0
 #func spawn( what ):
 #	var thing = database.get_thing( what )
 #

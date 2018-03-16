@@ -36,7 +36,11 @@ enum RACE {
 const DEFAULT_ACTION_TIME = 5.0	# Fallback delta value for an action
 
 
-
+var _SID = 0
 func make_thing( path ):
 	if $Things.has_node( path ):
-		return $Things.get_node(path).duplicate()
+		var obj = $Things.get_node(path).duplicate()
+		obj.database_path = path
+		obj.SID = _SID
+		_SID += 1
+		return obj
