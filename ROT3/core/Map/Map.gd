@@ -107,6 +107,7 @@ func draw_pawns():
 			pawn.init(thing)
 
 
+# Add a new Thing to the dungeon, from DATA/Things path
 func add_thing( path, where, start_found=false ):
 	var thing = DATA.make_thing(path)
 	
@@ -119,28 +120,17 @@ func add_thing( path, where, start_found=false ):
 	if thing.blocks_movement:
 		$Pathfinder.dirty_cells[where] = false
 		thing.connect( "cell_changed", self, "_on_blocker_cell_changed" )
-	
+	thing.connect( "kill", self, "kill_thing" )
 	return thing
 
 
-#	if start_found:
-#		thing.found = true
-#
-#	add_child( thing )
-#
-#	thing.cell = where
-#	if thing.blocks_movement:
-#		# Block this cell for pathfinding
-#		$Pathfinder.dirty_cells[where]=false
-#		thing.connect("map_cell_changed", self, "_on_blocker_map_cell_changed")
-#	return thing
-#
-#func remove_thing( thing ):
-#	if thing.blocks_movement:
-#		$Pathfinder.dirty_cells[thing.cell]=true
-#		thing.disconnect("map_cell_changed", self, "_on_blocker_map_cell_changed")
-#	remove_child( thing )
-#	return thing
+# Remove a Thing from the dungeon.
+# Callback for Thing 'kill' signal
+func kill_thing( who ):
+	who.queue_free()
+	yield( who, "tree_exited" )	# Ensure the Thing is gone
+	call_deferred("draw_pawns") # before redrawing pawns
+
 
 
 
@@ -219,6 +209,7 @@ func get_things_in_cells( cells ):
 	return list
 
 
+# Return array of open cells adjacent to a cell
 func find_empty_cells_at( where ):
 	var cells = RPG.DIRECTIONS
 	var choices = []
@@ -228,6 +219,7 @@ func find_empty_cells_at( where ):
 	return choices
 
 
+# Special setup for spawning the PLAYER
 func spawn_player( where ):
 	# Spawn Player
 	var obj = add_thing( "Misc/Player", where )
@@ -285,6 +277,8 @@ func fill_room( room, what ):
 		for y in range( rect.size.y ):
 			prints(x,y)
 			add_thing( RPG.spawn(what), Vector2(rect.position.x+x,rect.position.y+y) )
+
+
 
 func populate_room( room ):
 	var occupied = []

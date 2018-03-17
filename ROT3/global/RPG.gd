@@ -92,7 +92,7 @@ var player_data = {
 	}
 
 var messageboard
-
+var VERBOSE_ATTACKS = false
 
 #onready var database = preload("res://database/Database.tscn").instance()
 
@@ -147,13 +147,13 @@ func process_attack( attacker, target ):
 	# hit or miss this attack roll
 	var hits = false
 	# attacker's weapon damage roll
-	var damage = attacker.components.fighter.get_weapon_damage()
+	var damage = attacker.fighter.get_weapon_damage()
 	# attack die roll
 	var attack_roll = roll(1,30)
 	# attacker to-hit bonus
-	var attack_bonus = attacker.components.fighter.get_attack_bonus()
+	var attack_bonus = attacker.fighter.get_attack_bonus()
 	# target's AC
-	var ac = target.components.fighter.get_armor_class()
+	var ac = target.fighter.get_armor_class()
 	
 	# attack hits if modified attack roll meets/beats target AC
 	hits = attack_roll + attack_bonus >= ac
@@ -165,10 +165,10 @@ func process_attack( attacker, target ):
 		hits = false
 	
 	# Throw messages
-	var hit_txt = ["MISS!","HIT!"][int(hits)]
-
-	var roll_txt = ">> Attack roll for %s: 1d30+%s=%s(%s) vs AC%s .. %s" % [attacker.get_message_name(), str(attack_bonus), str(attack_roll+attack_bonus), str(attack_roll), str(ac), hit_txt]
-	RPG.messageboard.message( roll_txt )
+	if VERBOSE_ATTACKS:
+		var hit_txt = ["MISS!","HIT!"][int(hits)]
+		var roll_txt = ">> Attack roll for %s: 1d30+%s=%s(%s) vs AC%s .. %s" % [attacker.get_message_name(), str(attack_bonus), str(attack_roll+attack_bonus), str(attack_roll), str(ac), hit_txt]
+		RPG.messageboard.message( roll_txt )
 	# Return combat result in dictionary form
 	return {
 		"hits":	hits,

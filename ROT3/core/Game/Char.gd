@@ -23,11 +23,11 @@ func _ready():
 	draw_name_and_genus()
 	
 
-func _on_HP_changed( what ):
+func _on_current_hp_changed( what ):
 	$HP/Bar.value = what
 	$HP/Value/Current.text = str(what)
 
-func _on_maxHP_changed( what ):
+func _on_hp_changed( what ):
 	$HP/Bar.max_value = what
 	$HP/Value/Max.text = str(what)
 

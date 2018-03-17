@@ -379,6 +379,7 @@ stay_visible = true
 [node name="Fighter" parent="Things/Misc/Player" index="0" instance=ExtResource( 39 )]
 
 move_speed = 1.0
+invincible = true
 
 [node name="Player" parent="Things/Misc/Player" index="1" instance=ExtResource( 40 )]
 
@@ -391,6 +392,7 @@ blocks_movement = true
 [node name="Fighter" parent="Things/Misc/Hog" index="0" instance=ExtResource( 39 )]
 
 move_speed = 1.0
+invincible = false
 
 [node name="AI" parent="Things/Misc/Hog" index="1" instance=ExtResource( 42 )]
 

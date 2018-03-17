@@ -26,7 +26,9 @@ func message_cancel():
 func message_attack( attacker, target, damage ):
 	var txt = "%s hits %s for %s points of damage!" % \
 		[attacker,target,damage]
-	var color = COLOR_COMBAT_HIT
+	var color = COLOR_UNFORTUNATE_EVENT
+	if attacker == "you":
+		color = COLOR_FORTUNATE_EVENT
 	if damage <= 0:
 		txt = "%s misses!" % [attacker]
 		color = COLOR_COMBAT_MISS

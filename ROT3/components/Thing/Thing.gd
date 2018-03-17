@@ -5,6 +5,7 @@ signal cell_changed( from, to )
 signal about_to_act( delta )
 signal acted( action )
 
+signal kill(me)
 
 export(String) var thing_name = "Thing"
 
@@ -49,6 +50,18 @@ func setup():
 		if node.has_method("setup"):
 			node.setup()
 
+func get_message_name( the=false ):
+	var n = self.thing_name
+	if self == RPG.player:
+		n = "you"
+	else:
+		if the:
+			n = "the "+n
+		elif n[0] in ["a","e","i","o","u"]:
+			n = "an "+n
+		else:
+			n = "a "+n
+	return n
 
 func _rpg_process( delta ):
 	if ai:
@@ -79,5 +92,6 @@ func _set_cell( what ):
 	emit_signal( "cell_changed", cell, what )
 		
 
-
+func _on_fighter_died():
+	emit_signal("kill", self)
 
