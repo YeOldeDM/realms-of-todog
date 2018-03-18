@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tilemaps/DungeonTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://core/Map/Map.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://core/Map/FogMap.gd" type="Script" id=6]
 [ext_resource path="res://core/Map/Pathfinder.gd" type="Script" id=7]
 [ext_resource path="res://core/Map/SpellEffect.gd" type="Script" id=8]
+[ext_resource path="res://core/Map/PathVis.gd" type="Script" id=9]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 
@@ -127,5 +128,9 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 _sections_unfolded = [ "Smoothing" ]
+
+[node name="PathVis" type="Node2D" parent="." index="8"]
+
+script = ExtResource( 9 )
 
 

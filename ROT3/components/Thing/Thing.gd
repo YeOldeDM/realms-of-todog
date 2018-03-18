@@ -88,8 +88,9 @@ func _set_blocks_sight( what ):
 
 
 func _set_cell( what ):
-	cell = what
 	emit_signal( "cell_changed", cell, what )
+	cell = what
+	
 		
 
 func _on_fighter_died():

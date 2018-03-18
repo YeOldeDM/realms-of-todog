@@ -275,7 +275,6 @@ func fill_room( room, what ):
 	var rect = room.get_floor_rect()
 	for x in range( rect.size.x ):
 		for y in range( rect.size.y ):
-			prints(x,y)
 			add_thing( RPG.spawn(what), Vector2(rect.position.x+x,rect.position.y+y) )
 
 
@@ -381,7 +380,7 @@ func _on_player_cell_changed( from, to ):
 		if thing.cell in fov_cells:
 			if !thing.found:
 				thing.found = true
-				print("found")
+#				print("found")
 			if thing.ai:
 				if !thing.ai.awake:
 					thing.ai.wake_up( RPG.player )

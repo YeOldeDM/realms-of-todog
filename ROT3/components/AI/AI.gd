@@ -25,13 +25,14 @@ func find_path( to_cell ):
 func chase():
 	if !target: return
 	var path = find_path( target.cell )
+	if !path: return
 	if path.size() == 0: return
 	elif path.size() == 2:
 		get_parent().fighter.attack(target)
 	elif path.size() > 2: # The target is more than 1 cell away
 		var step_cell = path[1]
 		get_parent().fighter.step_or_attack( step_cell - get_parent().cell )
-		prints( get_parent().thing_name, "moves to", step_cell )
+#		prints( get_parent().thing_name, "moves to", step_cell )
 
 func act(delta):
 	if awake and alive:

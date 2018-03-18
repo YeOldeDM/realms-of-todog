@@ -9,10 +9,12 @@ var floor_cells = []
 var dirty_cells = {}
 
 func find_path(from, to):
+	dirty_cells[from] = true
 	clean_dirty_cells()
-	from = xy_to_id(from)
-	to = xy_to_id(to)
-	var path = map.get_point_path(from, to)
+	var from_id = xy_to_id(from)
+	var to_id = xy_to_id(to)
+	var path = map.get_point_path(from_id, to_id)
+
 	if path.size() > 0:
 		var v2path = PoolVector2Array()
 		for point in path:
@@ -37,19 +39,27 @@ func clean_dirty_cells():
 		for nx in range(-1,2):
 			for ny in range(-1,2):
 				var nid = xy_to_id(Vector2(cell.x+nx, cell.y+ny))
-				if id != nid and id in floor_cells and nid in floor_cells:
+#				prints(id, nid)
+				if id != nid and id_to_xy(id) in floor_cells and id_to_xy(nid) in floor_cells:
+					print("cleaning")
 					# Connect broken connections to neighbors
 					if is_point:
+						print("connect")
 						if !map.are_points_connected(id,nid):
+							
 							map.connect_points(id,nid)
 					# Break connections to neighbors
 					else:
+						print("disconnect")
 						if map.are_points_connected(id,nid):
+							
 							map.disconnect_points(id,nid)
 		# pop the cell off the list
 		cells.remove(0)
 		dirty_cells.erase(cell)
-		
+#	get_parent().get_node("PathVis").path_points = map.get_points()
+	get_parent().get_node("PathVis").update()
+	print('--')
 
 
 func build_map(bounds,cells):
@@ -76,6 +86,13 @@ func build_map(bounds,cells):
 							
 							if pid != nid and not map.are_points_connected(nid,pid):
 								map.connect_points(pid,nid)
+	
+	get_parent().get_node("PathVis").path_points = map.get_points()
+	get_parent().get_node("PathVis").update()
+
+
+
+
 
 
 
