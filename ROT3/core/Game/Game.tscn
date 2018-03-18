@@ -168,7 +168,7 @@ use_filter = false
 font_data = ExtResource( 12 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1469,6 +1469,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="SummonerSwitch" type="CheckButton" parent="Frame/Char/Bottom" index="1"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

@@ -84,10 +84,10 @@ func _on_thing_request_dequip( thing ):
 
 func _on_GodModeSwitch_toggled( button_pressed ):
 	if RPG.player:
-		RPG.player.components.fighter.invincible = button_pressed
+		RPG.player.fighter.invincible = button_pressed
 		RPG.messageboard.message( "GOD MODE %s" % ["OFF","ON"][int(button_pressed)], RPG.messageboard.COLOR_SYSTEM )
 	
-	RPG.save_game()
+#	RPG.save_game()
 
 
 
